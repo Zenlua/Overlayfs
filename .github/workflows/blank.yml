@@ -34,5 +34,5 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           echo
-          sudo echo > /dev/root/abc
-          ls /dev/root
+          sudo echo > /abc
+          ls /
