@@ -35,7 +35,7 @@ jobs:
         id: gofile
         uses: ahnafnafee/action-upload-gofile@v2.1.0
         with:
-          token: ${{ secrets.GOFILE_TOKEN }}
+          #token: ${{ secrets.GOFILE_TOKEN }}
           file: ./test.txt
 
       - name: View URL and QR Code
