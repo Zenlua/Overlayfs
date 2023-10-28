@@ -35,7 +35,7 @@ jobs:
       - name: "Upload test file"
         uses: "artipie/upload-action@master"
         with:
-          repo: "Zelooooo/main"
+          repo: "OS/main"
           file: "test.txt"
           path: "upload-action-test"
           username: "${{ secrets.ARTIPIE_USERNAME }}"
