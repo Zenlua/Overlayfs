@@ -39,7 +39,7 @@ jobs:
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           file-path: test.txt
-          #owner: LasyIsLazy
-          #repo: githubRepo
+          owner: Zelooooo
+          repo: main
           
 
