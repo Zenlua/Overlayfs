@@ -31,12 +31,13 @@ jobs:
 
       # Runs a set of commands using the runners shell
       
-      - name: Upload File
-        id: upload
-        uses: JantHsueh/upload-file-action@master
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          url: https://www.pgyer.com/apiv2/app/upload
-          forms: '{"_api_key":"${{ secrets.pgyer_key }}","buildInstallType":3}'
-          fileForms: '{"file":"test.txt"}'
-
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: test.txt
+          asset_name: mything
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "This is my release text"
     
