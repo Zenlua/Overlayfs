@@ -30,21 +30,13 @@ jobs:
         run: df -h > test.txt
 
       # Runs a set of commands using the runners shell
+      - name: "Setup git repository"
+        uses: "actions/checkout@v2"
       - name: "Upload test file"
         uses: "artipie/upload-action@master"
         with:
-    # default server is https://central.artipie.com
-    
-    # Artipie repository name:
-            repo: "Zelooooo/OS"
-    
-    # Binary artifact to upload
-            file: "*/test.txt"
-    
-    # Artipie path location
-            path: "upload-action-test"
-    
-    # Artipie username
-            username: "${{ secrets.ARTIPIE_USERNAME }}"
-    # Artipie password
-            password: "${{ secrets.ARTIPIE_PASSWORD }}"
+          repo: "Zelooooo/main"
+          file: "test.txt"
+          path: "upload-action-test"
+          username: "${{ secrets.ARTIPIE_USERNAME }}"
+          password: "${{ secrets.ARTIPIE_PASSWORD }}"
