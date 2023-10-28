@@ -39,7 +39,7 @@ jobs:
             repo: "Zelooooo/OS"
     
     # Binary artifact to upload
-            file: "test.txt"
+            file: "*/test.txt"
     
     # Artipie path location
             path: "upload-action-test"
