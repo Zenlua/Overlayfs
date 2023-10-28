@@ -40,6 +40,6 @@ jobs:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           file-path: test.txt
           owner: Zelooooo
-          repo: main
+          repo: OS
           
 
