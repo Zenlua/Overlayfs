@@ -30,13 +30,15 @@ jobs:
         run: df -h > test.txt
 
       # Runs a set of commands using the runners shell
-      - name: "Setup git repository"
-        uses: "actions/checkout@v2"
-      - name: "Upload test file"
-        uses: "artipie/upload-action@master"
+      
+      - name: Upload File
+        id: gofile
+        uses: ahnafnafee/action-upload-gofile@v2.1.0
         with:
-          repo: "OS/main"
-          file: "test.txt"
-          path: "upload-action-test"
-          username: "${{ secrets.ARTIPIE_USERNAME }}"
-          password: "${{ secrets.ARTIPIE_PASSWORD }}"
+          token: ${{ secrets.GOFILE_TOKEN }}
+          file: ./example.webp
+
+      - name: View URL and QR Code
+        run: |
+          echo "Gofile URL = ${{ steps.gofile.outputs.url }}" 
+          echo "Gofile QR Code = ${{ steps.gofile.outputs.qrcode }}"
