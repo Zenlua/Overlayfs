@@ -1,0 +1,37 @@
+name: Build
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+permissions: write-all
+jobs:
+  build:
+    name: 'Xem quá trình'
+    if: github.repository == 'Zelooooo/OS' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          # kakathic
+          sudo cp /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+          User="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
+     
+      - uses: actions/stale@v8
+        with:
+          days-before-issue-stale: 0
+          days-before-issue-close: 0
+          days-before-stale: 0
+          days-before-close: 0
+          only-labels: "bug"
+          stale-issue-label: "Hoàn thành"
+          days-before-pr-stale: -1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload File
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Storage
+          tag_name: note
+          files: |
+            Te.txt
+          
