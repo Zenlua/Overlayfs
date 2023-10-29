@@ -1,20 +1,16 @@
-name: Bug Report2
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - octocat
+name: Build Rom
+description: Xem chi tiết
+title: "Test: xxxxx"
+labels: ["build"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Điền vào thông tin bên dưới để hoàn thành quá trình xây dựng rom
   - type: input
-    id: contact
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: Nhập liên kết
+      description: Hãy điền liên kết tải rom vào đây
+      placeholder: Url: 
     validations:
       required: false
