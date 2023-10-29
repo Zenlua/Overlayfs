@@ -14,9 +14,7 @@ jobs:
       - name: Build
         run: |
           # kakathic
-          sudo cp /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
-          User="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
-     
+          . test.sh
       - uses: actions/stale@v8
         with:
           days-before-issue-stale: 0
