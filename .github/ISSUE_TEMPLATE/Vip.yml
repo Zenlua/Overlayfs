@@ -11,6 +11,7 @@ body:
     attributes:
       label: Nhập liên kết
       description: Hãy điền liên kết tải rom vào đây
-      placeholder: Url: 
+      placeholder: "Url="
+      value: "Url="
     validations:
-      required: false
+      required: true
