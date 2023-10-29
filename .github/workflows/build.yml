@@ -11,6 +11,8 @@ jobs:
     if: github.repository == 'Zelooooo/OS' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
+      - name: Load data
+        uses: actions/checkout@v3
       - name: Build
         run: |
           # kakathic
