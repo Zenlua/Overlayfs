@@ -15,3 +15,8 @@ body:
       value: "Url="
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        Sau khi hoàn thành toàn bộ hãy ấn vào nút màu xanh lá để hoàn thành `Submit new issue`
+        
