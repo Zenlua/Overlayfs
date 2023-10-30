@@ -17,19 +17,14 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: Set Issues
-        uses: zlus/action-extract-issues@1.0.0
-        id: set_issues
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions-cool/pr-extract-issues@v1
         with:
-          match-reg: 'Test: xxxxx' 
-          add-labels: enhancement   
-          remove-labels: bug        
-          add-comment: |            
-            already fixed.
-      - name: Log
-        run: echo ${{ steps.set_issues.outputs.issues }}
+          way: 'commit'
+          issues-labels: 'l1, l2'
+          remove-labels: 'bug1, bug2'
+          issues-comment: |
+            HI。这个 issue: ${number} 已经被修复了。
+          issues-close: true
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
