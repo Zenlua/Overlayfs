@@ -22,7 +22,7 @@ jobs:
         with:
           actions: 'create-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
+          issue-number: 2
           body: |
             Hello @${{ github.event.issue.user.login }}. Add some comments.
             你好 @${{ github.event.issue.user.login }}。巴拉巴拉。
