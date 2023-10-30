@@ -17,10 +17,10 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: Add labels
+      - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
-          #actions: 'add-labels'
+          actions: 'lock-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          labels: 'bug'
+          labels: 'inactive'
+          
