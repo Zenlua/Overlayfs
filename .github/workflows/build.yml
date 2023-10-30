@@ -28,6 +28,8 @@ jobs:
           remove-labels: bug        
           add-comment: |            
             already fixed.
+      - name: Log
+        run: echo ${{ steps.set_issues.outputs.issues }}
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
