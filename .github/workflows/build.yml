@@ -15,7 +15,7 @@ jobs:
     if: github.repository == 'Zelooooo/OS' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: "Load data ${{ steps.last-issue.outputs.issue-number }}"
+      - name: "Load data ${{ github.event.issue.number }}"
         uses: actions/checkout@v3
       - uses: actions/github-script@v6
         with:
