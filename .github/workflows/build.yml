@@ -23,6 +23,6 @@ jobs:
           actions: 'close-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: 3
-          labels: 'duplicate,bug'
+          labels: 'duplicate'
           body: test
           
