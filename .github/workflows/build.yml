@@ -20,18 +20,11 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.update({
-              issue_number: 13,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              state_reason: 'completed',
-              labels: ['Test2'],
-              body: '👋 Thanks for reporting!'
-            })
             github.rest.issues.removeLabel({
-              issue_number: 13,
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: ['Wait']
+              name: ['Test2']
             })
+            const pr = context.issue.number || issues.data[0].number
+            
