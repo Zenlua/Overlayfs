@@ -17,12 +17,24 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: 'Chat bot'
-        uses: actions/stale@v8
+      - uses: actions/github-script@v6
         with:
-          only-labels: "Build"
-          stale-issue-label: "Wait"
-          stale-issue-message: "Đang trong quá trình xây dựng, vui lòng chờ...<br/><br/>Sau khi xong link sẽ được gửi vào bài viết này.<br/><br/>Hoặc xem quá trình xây dựng 📱[Actions](https://github.com/chamchamfy/RROM/actions/runs/${{ env.idwork }})"
-          days-before-stale: 0
-          issue_number: 11
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Test']
+            })
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
+            github.rest.issues.removeLabel({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['Wait']
+            })
