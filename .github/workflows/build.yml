@@ -21,7 +21,7 @@ jobs:
         with:
           script: |
             github.rest.issues.removeLabel({
-              issue_number: context.issue.number,
+              issue_number: issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: ['Test2']
