@@ -28,7 +28,15 @@ jobs:
           #days-before-issue-close: 0
           #days-before-close: 0
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: welcome
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'welcome'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: hi @${{ github.event.issue.user.login }}, welcome!
+          labels: 'welcome1, welcome2'
+          assignees: 'xx1'
+          issue-emoji: '+1, -1, eyes'
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
