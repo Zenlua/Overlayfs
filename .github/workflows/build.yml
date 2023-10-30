@@ -24,8 +24,14 @@ jobs:
               issue_number: 13,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              state: 'closed',
+              state: 'open',
               state_reason: 'completed',
-              labels: ['Test'],
+              labels: ['Test2'],
               body: '👋 Thanks for reporting!'
+            })
+            github.rest.issues.removeLabel({
+              issue_number: 13,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['Wait']
             })
