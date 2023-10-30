@@ -21,19 +21,19 @@ jobs:
         with:
           script: |
             github.rest.issues.addLabels({
-              issue_number: context.issue.number,
+              issue_number: 13,
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['Test']
             })
             github.rest.issues.createComment({
-              issue_number: context.issue.number,
+              issue_number: 13,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: '👋 Thanks for reporting!'
             })
             github.rest.issues.removeLabel({
-              issue_number: context.issue.number,
+              issue_number: 13,
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: ['Wait']
