@@ -21,8 +21,8 @@ jobs:
         with:
           query: 'label:bug'
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Close issues marked as fixed upon a release.
-        uses: gcampbell/fixed-pending-release/@0.0.9
+      - name: Close issues
+        uses: gcampbell-msft/fixed-pending-release@0.0.9         
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           label: fixed-pending-release
