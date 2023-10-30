@@ -17,6 +17,13 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
+      - name: Please Star First
+        uses: qxip/please-star-light@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          message: "Please star this repository to motivate developers! :star:"
+          label: "stargazed"
+          autoclose: true
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
