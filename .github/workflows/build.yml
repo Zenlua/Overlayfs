@@ -20,9 +20,9 @@ jobs:
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
-          actions: 'lock-issues'
+          actions: 'close-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: 3
-          labels: 'duplicate'
+          labels: 'duplicate,bug'
           body: test
           
