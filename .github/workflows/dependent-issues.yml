@@ -2,7 +2,10 @@ on:
   workflow_dispatch:
   issues:
     types: [opened, edited]
-
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
   auto_close_issues:
     runs-on: ubuntu-latest
