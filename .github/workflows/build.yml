@@ -20,30 +20,4 @@ jobs:
       - name: 'Tắt Issues'
         uses: actions/stale@v8
         with:
-          #only-labels: "build"
-          stale-issue-label: "Wait"
-          stale-issue-message: "Đang trong quá trình xây dựng, vui lòng chờ...<br/><br/>Sau khi xong link sẽ được gửi vào bài viết này."
-          #days-before-issue-stale: 0
-          days-before-stale: 0
-          #days-before-issue-close: 0
-          #days-before-close: 0
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: welcome
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: 'welcome'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: hi @${{ github.event.issue.user.login }}, welcome!
-          labels: 'welcome1, welcome2'
-          assignees: 'Zelooooo'
-          issue-emoji: '+1, -1, eyes'
-          issue-number: 10
-      - name: lock-issues
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: 'close-issues'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: 3
-          labels: 'duplicate'
-          body: test
-          
+          run: env
