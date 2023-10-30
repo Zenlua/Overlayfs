@@ -17,5 +17,5 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: "Tắt Issues $GITHUB_RUN_ID - ${{ NUMBERI }} - ${ NUMBERI }"
+      - name: "Tắt Issues $GITHUB_RUN_ID - ${{ GITHUB_RUN_ID }} - ${ GITHUB_RUN_ID }"
         run: env
