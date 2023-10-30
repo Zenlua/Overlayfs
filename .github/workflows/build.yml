@@ -17,13 +17,24 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - uses: lee-dohm/close-matching-issues@v2
+      - uses: dessant/repo-lockdown@v3
         with:
-          query: 'label:bug'
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Close issues
-        uses: gcampbell-msft/fixed-pending-release@0.0.9         
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          label: duplicate
-          message: ":tada: This issue has now been fixed and is now available in the latest release! :tada:"
+          github-token: ${{ github.token }}
+          #exclude-issue-created-before: ''
+          #exclude-issue-labels: ''
+          issue-labels: 'duplicate'
+          issue-comment: 'tesst 123'
+          skip-closed-issue-comment: false
+          close-issue: true
+          lock-issue: true
+          issue-lock-reason: '999'
+          #exclude-pr-created-before: ''
+          #exclude-pr-labels: ''
+          #pr-labels: ''
+          #pr-comment: ''
+          #skip-closed-pr-comment: false
+          #close-pr: true
+          #lock-pr: true
+          #pr-lock-reason: ''
+          #process-only: ''
+          #log-output: false
