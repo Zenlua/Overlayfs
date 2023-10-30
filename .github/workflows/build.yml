@@ -17,15 +17,8 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - uses: dessant/support-requests@v3
+      - uses: teamreadme/faceless-issues@v1.0
         with:
-          github-token: ${{ github.token }}
-          support-label: 'bug'
-          issue-comment: >
-            :wave: @{issue-author}, we use the issue tracker exclusively
-            for bug reports and feature requests. However, this issue appears
-            to be a support request. Please use our support channels
-            to get help with the project.
-          close-issue: true
-          lock-issue: false
-          issue-lock-reason: 'off-topic'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          close: true
+          label: 'bug'
