@@ -26,6 +26,6 @@ jobs:
           body: |
             Hello @${{ github.event.issue.user.login }}. Add some comments.
             你好 @${{ github.event.issue.user.login }}。巴拉巴拉。
-          emoji: '+1' or '+1,heart'
+          #emoji: '+1' or '+1,heart'
 
 
