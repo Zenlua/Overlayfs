@@ -21,6 +21,8 @@ jobs:
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'lock-issues'
-          token: 3
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: 3
           labels: 'inactive'
+          body: test
           
