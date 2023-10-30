@@ -4,6 +4,10 @@ on:
   issues:
     types:
       - opened
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 permissions: write-all
 jobs:
   build:
@@ -13,23 +17,15 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: Build
-        run: |
-          # kakathic
-          . test.sh
-      - name: Dán Link
-        uses: actions-cool/issues-helper@v3
+      - uses: dessant/support-requests@v3
         with:
-          actions: 'add-labels'
-          labels: 'Hoàn thành'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: 2
-      - name: Dán Link 2
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: 'create-comment'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: 2
-          body: |
-            "NAME: ${{ env.NAMER }}<br/><br/>LINK DOWNLOAD: ${{ env.LINKROM }}<br/><br/>MD5: ${{ env.MD5 }}"   
-          
+          github-token: ${{ github.token }}
+          support-label: 'bug'
+          issue-comment: >
+            :wave: @{issue-author}, we use the issue tracker exclusively
+            for bug reports and feature requests. However, this issue appears
+            to be a support request. Please use our support channels
+            to get help with the project.
+          close-issue: true
+          lock-issue: false
+          issue-lock-reason: 'off-topic'
