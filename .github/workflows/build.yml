@@ -24,7 +24,7 @@ jobs:
               issue_number: 13,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              state: 'open',
+              state: 'closed',
               state_reason: 'completed',
               labels: ['Test'],
               body: '👋 Thanks for reporting!'
