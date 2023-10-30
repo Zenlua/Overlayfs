@@ -37,7 +37,7 @@ jobs:
           labels: 'welcome1, welcome2'
           assignees: 'xx1'
           issue-emoji: '+1, -1, eyes'
-          issue-number: 2
+          issue-number: 6
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
