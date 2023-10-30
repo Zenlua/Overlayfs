@@ -17,15 +17,13 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-
       - uses: lee-dohm/close-matching-issues@v2
         with:
           query: 'label:bug'
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Auto Close Org Issues
-        uses: mheap/auto-close-org-issues-action@main
+      - name: Close issues marked as fixed upon a release.
+        uses: gcampbell/fixed-pending-release/@0.0.9
         with:
-          token: ${{ secrets.PAT }}
-          org: 'Test: xxxxx'
-          message: Thanks for raising an issue! For YOUR_ORG_NAME employees, we track issues in the ABC Jira project
-          #keep_open: team-a,team-b
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: fixed-pending-release
+          message: ":tada: This issue has now been fixed and is now available in the latest release! :tada:"
