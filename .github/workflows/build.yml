@@ -20,10 +20,14 @@ jobs:
       - name: Dán Link
         uses: actions-cool/issues-helper@v3
         with:
-          actions: |
-            - 'add-labels'
-            - 'create-comment'
+          actions: 'add-labels'
           labels: 'Hoàn thành'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: 2
+      - name: Dán Link 2
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: 2
           body: |
