@@ -17,13 +17,17 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: Please Star First
-        uses: qxip/please-star-light@v4
+      - name: Set Issues
+        uses: zlus/action-extract-issues@1.0.0
+        id: set_issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          message: "Please star this repository to motivate developers! :star:"
-          #label: "stargazed"
-          autoclose: true
+          match-reg: 'test +#(\d+)' 
+          add-labels: enhancement   
+          remove-labels: bug        
+          add-comment: |            
+            already fixed.
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
