@@ -9,9 +9,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Automatically close issues that don't follow the issue template
-        uses: lucasbento/auto-close-issues@v1.0.2
+      - name: Close issues marked as fixed upon a release.
+        uses: gcampbell/fixed-pending-release/@x.x.x
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-close-message: "@${issue.user.login}: hello! :wave:\n\nThis issue is being automatically closed because it does not follow the issue template." # optional property
-          closed-issues-label: "🙁 Not following issue template" # optional property
+          token: ${{ secrets.GITHUB_TOKEN }}
+          label: fixed-pending-release
+          message: ":tada: This issue has" 
+          
