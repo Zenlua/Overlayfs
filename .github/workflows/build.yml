@@ -27,7 +27,7 @@ jobs:
           skip-closed-issue-comment: false
           close-issue: true
           lock-issue: true
-          issue-lock-reason: '999'
+          issue-lock-reason: 'bug'
           #exclude-pr-created-before: ''
           #exclude-pr-labels: ''
           #pr-labels: ''
