@@ -25,5 +25,5 @@ jobs:
         uses: gcampbell-msft/fixed-pending-release@0.0.9         
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          label: fixed-pending-release
+          label: duplicate
           message: ":tada: This issue has now been fixed and is now available in the latest release! :tada:"
