@@ -21,8 +21,8 @@ jobs:
         uses: actions-cool/issues-helper@v3
         with:
           actions: |
-            - add-labels
-            - create-comment
+            - 'add-labels'
+            - 'create-comment'
           labels: 'Hoàn thành'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: 2
