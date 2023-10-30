@@ -17,11 +17,6 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - name: Get Issue
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: 'get-issue'
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Tắt Issues'
         uses: actions/stale@v8
         with:
@@ -42,6 +37,7 @@ jobs:
           labels: 'welcome1, welcome2'
           assignees: 'xx1'
           issue-emoji: '+1, -1, eyes'
+          issue-number: 2
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
