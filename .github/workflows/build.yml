@@ -18,6 +18,4 @@ jobs:
       - name: Load data
         uses: actions/checkout@v3
       - name: 'Tắt Issues'
-        uses: actions/stale@v8
-        with:
-          run: env
+        run: env
