@@ -23,6 +23,6 @@ jobs:
           actions: 'lock-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: 3
-          labels: 'inactive'
+          labels: 'duplicate'
           body: test
           
