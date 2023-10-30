@@ -22,9 +22,10 @@ jobs:
         with:
           query: 'label:bug'
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Automatically close issues that don't follow the issue template
-        uses: lucasbento/auto-close-issues@v1.0.2
+      - name: Auto Close Org Issues
+        uses: mheap/auto-close-org-issues-action@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-close-message: "@${issue.user.login}: hello! :wave:\n\nThis issue is being automatically closed because it does not follow the issue template." # optional property
-          closed-issues-label: "🙁 Not following issue template" # optional property
+          token: ${{ secrets.PAT }}
+          org: 'Test: xxxx'
+          message: Thanks for raising an issue! For YOUR_ORG_NAME employees, we track issues in the ABC Jira project
+          keep_open: team-a,team-b
