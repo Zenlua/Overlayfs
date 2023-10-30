@@ -17,17 +17,17 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      #- name: 'Tắt Issues'
-        #uses: actions/stale@v8
-        #with:
+      - name: 'Tắt Issues'
+        uses: actions/stale@v8
+        with:
           #only-labels: "build"
-          #stale-issue-label: "Wait"
-          #stale-issue-message: "Đang trong quá trình xây dựng, vui lòng chờ...<br/><br/>Sau khi xong link sẽ được gửi vào bài viết này."
-          #days-before-issue-stale: 0
-          #days-before-stale: 0
-          #days-before-issue-close: 0
-          #days-before-close: 0
-          #repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-label: "Wait"
+          stale-issue-message: "Đang trong quá trình xây dựng, vui lòng chờ...<br/><br/>Sau khi xong link sẽ được gửi vào bài viết này."
+          days-before-issue-stale: 0
+          days-before-stale: 0
+          days-before-issue-close: 0
+          days-before-close: 0
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: welcome
         uses: actions-cool/issues-helper@v3
         with:
