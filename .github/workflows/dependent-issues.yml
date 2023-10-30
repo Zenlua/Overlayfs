@@ -13,6 +13,6 @@ jobs:
         uses: gcampbell/fixed-pending-release/@x.x.x
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          label: fixed-pending-release
+          label: bug
           message: ":tada: This issue has" 
           
