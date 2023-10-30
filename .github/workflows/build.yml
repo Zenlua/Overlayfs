@@ -22,7 +22,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           message: "Please star this repository to motivate developers! :star:"
-          label: "stargazed"
+          #label: "stargazed"
           autoclose: true
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
