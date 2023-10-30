@@ -21,6 +21,6 @@ jobs:
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'lock-issues'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: 3
           labels: 'inactive'
           
