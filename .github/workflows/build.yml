@@ -17,24 +17,10 @@ jobs:
     steps:
       - name: Load data
         uses: actions/checkout@v3
-      - uses: dessant/repo-lockdown@v3
+      - name: Add labels
+        uses: actions-cool/issues-helper@v3
         with:
-          github-token: ${{ github.token }}
-          #exclude-issue-created-before: ''
-          #exclude-issue-labels: ''
-          issue-labels: 'duplicate'
-          issue-comment: 'tesst 123'
-          skip-closed-issue-comment: false
-          close-issue: true
-          lock-issue: true
-          issue-lock-reason: 'spam'
-          #exclude-pr-created-before: ''
-          #exclude-pr-labels: ''
-          #pr-labels: ''
-          #pr-comment: ''
-          #skip-closed-pr-comment: false
-          #close-pr: true
-          #lock-pr: true
-          #pr-lock-reason: ''
-          #process-only: ''
-          #log-output: false
+          #actions: 'add-labels'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          labels: 'bug'
