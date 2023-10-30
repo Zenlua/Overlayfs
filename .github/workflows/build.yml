@@ -35,9 +35,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: hi @${{ github.event.issue.user.login }}, welcome!
           labels: 'welcome1, welcome2'
-          assignees: 'xx1'
+          #assignees: 'xx1'
           issue-emoji: '+1, -1, eyes'
-          issue-number: 7
+          issue-number: 8
       - name: lock-issues
         uses: actions-cool/issues-helper@v3
         with:
