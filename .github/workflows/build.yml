@@ -26,6 +26,6 @@ jobs:
         uses: mheap/auto-close-org-issues-action@main
         with:
           token: ${{ secrets.PAT }}
-          org: 'Test: xxxx'
+          org: 'Test: xxxxx'
           message: Thanks for raising an issue! For YOUR_ORG_NAME employees, we track issues in the ABC Jira project
-          keep_open: team-a,team-b
+          #keep_open: team-a,team-b
