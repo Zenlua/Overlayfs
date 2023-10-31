@@ -17,13 +17,9 @@ jobs:
     steps:
       - name: "Load data ${{ github.event.issue.number }}"
         uses: actions/checkout@v3
-      - uses: actions/github-script@v6
+      - run: echo "123" > ./file.txt
+      - uses: EndBug/add-and-commit@v9
         with:
-          script: |
-            github.rest.issues.removeLabel({
-              issue_number: issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: ['Test2']
-            })
-            
+          message: 'Add the very useful text file'
+          add: '*.txt --force'
+          cwd: './'
