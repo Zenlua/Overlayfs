@@ -18,5 +18,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          env
+          gh run cancel $GITHUB_RUN_NUMBER
 
