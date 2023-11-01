@@ -1,6 +1,8 @@
-GITENV(){ echo "$1=$2" >> $GITHUB_ENV; }
-
-
-GITENV kk 123
-
-echo $kk
+while true; do
+if [ "$(gh issue view 14 | grep -cm1 CLOSED)" == 1 ];then
+gh run cancel $GITHUB_RUN_ID
+else
+sleep 1
+echo 1
+fi
+done
