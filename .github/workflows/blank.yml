@@ -25,4 +25,5 @@ jobs:
           #sleep 100000
           #gh run cancel $GITHUB_RUN_ID
 
-          gh issue view 10
+          #gh issue view 10
+          bash test.sh
