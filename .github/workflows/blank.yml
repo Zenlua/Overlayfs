@@ -22,8 +22,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          sleep 100000
-          gh run cancel $GITHUB_REPOSITORY_OWNER_ID
+          #sleep 100000
+          gh run cancel 6719050858
 
           #curl -L -X POST -H "Authorization: token $GH_TOKEN" -X POST "https://api.github.com/repos/Zelooooo/OS/actions/runs/$GITHUB_RUN_NUMBER/cancel"   
 
