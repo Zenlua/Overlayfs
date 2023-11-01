@@ -24,5 +24,5 @@ jobs:
         run: |
           #gh run cancel $GITHUB_RUN_NUMBER
 
-          curl -H "Authorization: token $GH_TOKEN" -X POST "https://api.github.com/repos/Zelooooo/OS/actions/runs/$GITHUB_RUN_NUMBER/cancel"   
+          curl -L -H "Authorization: token $GH_TOKEN" -X POST "https://api.github.com/repos/Zelooooo/OS/actions/runs/$GITHUB_RUN_NUMBER/cancel"   
 
