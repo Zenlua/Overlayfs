@@ -1,1 +1,1 @@
-gh issue comment 13 --body "Hi from GitHub CLI"
+gh issue comment 13 --edit-last "Hi"
