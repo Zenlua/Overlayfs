@@ -1,1 +1,1 @@
-gh issue comment 13 -e "Hi"
+gh issue comment 13 -b "Hi" --edit-last
