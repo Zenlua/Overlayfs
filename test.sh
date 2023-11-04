@@ -1,1 +1,1 @@
-gh issue comment 13 -b "Hi 223" -e
+gh issue comment 13 -e "Hi 223"
