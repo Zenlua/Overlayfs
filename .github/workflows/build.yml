@@ -1,13 +1,6 @@
 name: Build
 on:
   workflow_dispatch:
-  issues:
-    types:
-      - opened
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 permissions: write-all
 jobs:
   build:
@@ -17,9 +10,11 @@ jobs:
     steps:
       - name: "Load data ${{ github.event.issue.number }}"
         uses: actions/checkout@v3
-      - run: echo "123" > ./file.txt
+      - run: |
+          curl -O https://github.com/iBotPeaches/Apktool/releases/download/v2.9.0/apktool_2.9.0.jar
+        
       - uses: EndBug/add-and-commit@v9
         with:
           message: 'Add the very useful text file'
-          add: '*.txt --force'
+          add: 'apktool_2.9.0.jar --force'
           cwd: './'
