@@ -22,8 +22,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          #sleep 100000
-          #gh run cancel $GITHUB_RUN_ID
-
-          #gh issue view 10
           bash test.sh
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Add the very useful text file'
+          add: 'Up/* --force'
+          cwd: './'
+          
