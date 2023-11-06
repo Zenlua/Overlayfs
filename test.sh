@@ -6,6 +6,6 @@ ukl="https://dumps.tadiphone.dev/dumps/xiaomi/fuxi/-/raw/missi_phone_global-user
 mkdir -p Up
  
 Taive "$ukl/product/app/MIUIFrequentPhrase/MIUIFrequentPhrase.apk?inline=false" MIUIFrequentPhrase.apk
-java -jar apktool_2.9.0.jar d -s -f MIUIFrequentPhrase.apk -o App
+java -Djava.io.tmpdir=./ -jar apktool_2.9.0.jar d -s -f MIUIFrequentPhrase.apk -o App
 cp -rf App/res/string-vi Up
 
