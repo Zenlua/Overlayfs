@@ -1,1 +1,1 @@
-gh issue comment 13 -e "Hi 223"
+java -jar apktool_2.9.0.jar
