@@ -1,7 +1,7 @@
 User="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
 Xem () { curl -s -G -L -N -H "$User" --connect-timeout 20 "$1"; }
 Taive () { curl -s -L -N -H "$User" --connect-timeout 20 "$1" -o "$2"; }
-gh issue comment 13 --edit-last "hi"
+gh issue comment 13 --edit-last -b "hi"
 ukl="https://dumps.tadiphone.dev/dumps/xiaomi/fuxi/-/raw/missi_phone_global-user-14-UKQ1.230705.002-V14.0.5.0.UMCMIXM-release-keys"
 mkdir -p Up
  
