@@ -1,7 +1,8 @@
 name: 'auto closed issues'
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '30 1 * * *'
+    - cron: '59 23 * * *'
 permissions: write-all
 jobs:
   stale:
