@@ -10,9 +10,7 @@ jobs:
     steps:
       - uses: actions/stale@v8
         with:
-          close-issue-message: 'Issue has expired, please try again'  
-          days-before-issue-stale: 1
+          close-issue-message: 'Issue has expired, please try again'
           days-before-issue-close: 1
-          days-before-stale: 1
           days-before-close: 1
-          stale-issue-label: 'Error'
+          close-issue-label: 'Error'
