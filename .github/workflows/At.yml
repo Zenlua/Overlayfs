@@ -16,3 +16,4 @@ jobs:
           days-before-close: 1
           days-before-pr-close: 1
           close-issue-label: 'Error'
+          ignore-issue-updates: true
