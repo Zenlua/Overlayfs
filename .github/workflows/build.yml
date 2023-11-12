@@ -22,4 +22,4 @@ jobs:
         with:
           message: 'Add the very useful text file'
           add: 'log.txt --force'
-          cwd: '.github'
+          cwd: './'
