@@ -4,7 +4,7 @@ author=kakathic
 description=Allow write and read permissions ,latest overlayfs mount system, only for magisk, module will not interfere with other modules
 version=1.0
 versionCode=1
-updateJson=https://raw.githubusercontent.com/Zenlua/Overlayfs/main/module/Overlayfs.json
+updateJson=https://raw.githubusercontent.com/Zenlua/Overlayfs/main/module/overlayfs.json
 
 # Grant read and write permissions to the system
 # true: read and write
