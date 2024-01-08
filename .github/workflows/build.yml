@@ -1,0 +1,20 @@
+name: Build modules
+on:
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  build:
+    name: 'Buid Zip'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: See process
+        run: |
+          echo 1
+      - name: Upload Zip
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Tmp
+          tag_name: tmp
+          files: Overlay.zip
+          
