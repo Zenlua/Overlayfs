@@ -1,0 +1,36 @@
+id=overlayfs
+name=Overlayfs partition
+author=kakathic
+description=Allow write and read permissions ,latest overlayfs mount system, only for magisk, module will not interfere with other modules
+version=1.0
+versionCode=1
+updateJson=https://github.com/Zelooooo/Overlayfs/releases/download/tmp/overlayfs.json
+
+# Grant read and write permissions to the system
+# true: read and write
+# false: read only
+rw=true
+
+# Auto grant selinux permissions, ( If you understand selinux, granting permissions manually will be more accurate )
+# true: auto
+# false: no
+chcon=true
+
+# Auto grant read and write permissions, both folder and file will be given permission 755, ( If you understand selinux, granting permissions manually will be more accurate )
+# true: auto
+# false: no
+chmod=false
+
+# Auto change group and owner become root, ( If you understand selinux, granting permissions manually will be more accurate )
+# true: auto
+# false: no
+chown=true
+
+# Backup files when updating modules
+# true: yes
+# false: no
+backup=false
+
+# Partition list is overlayfs r/w
+# Only necessary partitions should be added, unused partitions should not be added
+partition=/product/app /product/etc /product/fonts /product/framework /product/media /product/overlay /product/priv-app /system/app /system/etc /system/fonts /system/framework /system/priv-app /system_ext/app /system_ext/cust /system_ext/etc /system_ext/framework /system_ext/priv-app
