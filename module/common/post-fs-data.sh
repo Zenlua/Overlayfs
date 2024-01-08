@@ -1,0 +1,2 @@
+# kakathic
+MODPATH="${0%/*}"
