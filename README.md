@@ -1,5 +1,7 @@
 # Overlay FS
 
++ [Update log](../module/log.md)
+
 + Use magisk to flash the module 
 
 + This module allows to rw partitions present in the list
