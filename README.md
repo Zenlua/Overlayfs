@@ -8,6 +8,8 @@
 
 + Report: [Telegram](https://t.me/toolmod)
 
++ ! Note: files cannot be edited directly in the system, please copy to internal memory and move from internal memory to system 
+
 #### Functions
 
 + Customizable features in module.prop
