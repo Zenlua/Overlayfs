@@ -4,7 +4,7 @@ on:
 permissions: write-all
 jobs:
   build:
-    name: 'Buid Zip'
+    name: 'Build Zip'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
