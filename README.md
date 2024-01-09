@@ -4,7 +4,7 @@
 
 + This module allows to rw partitions present in the list
 
->  [Telegram](https://t.me/toolmod)
++ [Telegram](https://t.me/toolmod)
 
 #### Functions
 
