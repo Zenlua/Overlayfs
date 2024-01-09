@@ -33,4 +33,4 @@ backup=false
 
 # Partition list is overlayfs r/w
 # Only necessary partitions should be added, unused partitions should not be added
-partition=/product /system_ext /odm /mi_ext /cust /system/app /system/etc /system/fonts /system/framework /system/lib /system/lib64 /system/priv-app /system/vendor /system/system_ext /system/system_ext /vendor/app /vendor/data-app /vendor/lib /vendor/lib64 /vendor/overlay /vendor/etc
+partition=/product /system_ext /odm /mi_ext /cust /system/app /system/etc /system/fonts /system/framework /system/priv-app /system/vendor /system/system_ext /system/system_ext /vendor/app /vendor/data-app /vendor/lib /vendor/lib64 /vendor/overlay /vendor/etc
