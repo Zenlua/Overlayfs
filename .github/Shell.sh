@@ -9,6 +9,7 @@ cd $TOME/module
 
 zip -r $TOME/Up/$(getmodun id)_$(getmodun version).zip *
 upenv VER "V_$(getmodun version)"
+upenv VUR "$(getmodun version)"
 
 echo '
 {
