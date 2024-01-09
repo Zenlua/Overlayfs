@@ -2,8 +2,8 @@ id=overlayfs
 name=Overlayfs partition
 author=kakathic
 description=Allow write and read permissions ,latest overlayfs mount system, only for magisk, module will not interfere with other modules
-version=1.0
-versionCode=1
+version=1.1
+versionCode=101
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
 
 # Grant read and write permissions to the system
