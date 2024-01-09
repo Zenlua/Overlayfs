@@ -15,7 +15,7 @@ echo '
 {
 "version": "'$(getmodun version)'",
 "versionCode": "'$(getmodun versionCode)'",
-"zipUrl": "kkkkkk",
+"zipUrl": "https://github.com/Zenlua/Overlayfs/releases/download/'$VER'/'$(getmodun id)_$(getmodun version)'.zip",
 "changelog": "https://raw.githubusercontent.com/Zenlua/Overlayfs/main/module/log.md"
 }
 ' > $TOME/tmp2/overlay.json
