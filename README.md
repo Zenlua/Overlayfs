@@ -6,6 +6,8 @@
 
 #### Functions
 
++ Customizable features in module.prop
+
 Read and write
 
 + Default is rw
