@@ -1,7 +1,8 @@
 # kakathic
 MODP="${0%/*}"
 PMSK="$(magisk --path)/.magisk/mirror"
-su="su -M -c"
+magisk && su="su -M -c"
+
 # start overlay_fs
 for TV in $(cat $MODP/partition); do
 if [ -e "$TV" ];then
