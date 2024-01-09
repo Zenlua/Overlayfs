@@ -1,4 +1,4 @@
-name: Build modules
+name: Build module
 on:
   workflow_dispatch:
 permissions: write-all
