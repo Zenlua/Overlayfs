@@ -1,6 +1,6 @@
 # Overlay FS
 
-+ [Update log](../module/log.md)
++ [Update log](./module/log.md)
 
 + Use magisk to flash the module 
 
