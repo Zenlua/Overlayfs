@@ -10,11 +10,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: See process
         run: |
-          echo 1
+          bash .github/Shell.sh
       - name: Upload Zip
         uses: softprops/action-gh-release@v1
         with:
           name: Tmp
           tag_name: tmp
-          files: Overlay.zip
-          
+          files: Up/*
