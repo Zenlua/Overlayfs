@@ -40,6 +40,6 @@
 + /product/app, for example, will allow rw to this directory
 + Default: `/product /system_ext /odm /mi_ext /cust /system/app /system/etc /system/fonts /system/framework /system/lib /system/lib64 /system/priv-app /system/vendor /system/system_ext /system/system_ext /vendor/app /vendor/data-app /vendor/lib /vendor/lib64 /vendor/overlay /vendor/etc`
 + Please manually add the folders you want to rw
-
++ Some directories in /vendor can cause bootloops so be careful.
 
 
