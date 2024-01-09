@@ -38,8 +38,8 @@
 **Partition list**
 
 + /product/app, for example, will allow rw to this directory
-+ Default: `/product/app /product/etc /product/fonts /product/framework /product/media /product/overlay /product/priv-app /system/app /system/etc /system/fonts /system/framework /system/priv-app /system_ext/app /system_ext/cust /system_ext/etc /system_ext/framework /system_ext/priv-app`
++ Default: `/product /system_ext /odm /mi_ext /cust /system/app /system/etc /system/fonts /system/framework /system/lib /system/lib64 /system/priv-app /system/vendor /system/system_ext /system/system_ext /vendor/app /vendor/data-app /vendor/lib /vendor/lib64 /vendor/overlay /vendor/etc`
 + Please manually add the folders you want to rw
-+ For example: `/system /vendor /product /system_ext` It is not necessary to specify as default 
+
 
 
