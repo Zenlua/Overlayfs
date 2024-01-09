@@ -25,8 +25,7 @@ ui_print "  $KS1"
 echo "$KS1" >> $MODPATH/partition
 mkdir -p $MODPATH$KS1
 setfattr -n trusted.overlay.opaque -v y $MODPATH$KS1
-mkdir -p $MODPATH/zption/tmp1$KS1
-mkdir -p $MODPATH/zption/tmp2$KS1
+mkdir -p $MODPATH/zption/tmp$KS1
 done
 mkdir -p $MODPATH/work
 ui_print
