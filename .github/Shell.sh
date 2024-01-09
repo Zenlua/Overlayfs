@@ -8,7 +8,6 @@ upenv(){ echo "$1=$2" >> $GITHUB_ENV; eval "$1=$2"; }
 cd $TOME/module
 
 zip -r $TOME/Up/$(getmodun id)_$(getmodun version).zip *
-
 upenv VER "V_$(getmodun version)"
 
 echo '
