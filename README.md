@@ -1,6 +1,6 @@
 # Overlay FS
 
-+ Should only be used for magisk
++ Use magisk to flash the module 
 
 + This module allows to rw partitions present in the list
 
