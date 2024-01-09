@@ -11,9 +11,15 @@ jobs:
       - name: See process
         run: |
           bash .github/Shell.sh
-      - name: Upload Zip
+      - name: Upload zip
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Overlayfs ${{ env.VUR }}
+          tag_name: ${{ env.VER }}
+          files: Up/*
+      - name: Upload json
         uses: softprops/action-gh-release@v1
         with:
           name: Tmp
           tag_name: tmp
-          files: Up/*
+          files: tmp2/*
