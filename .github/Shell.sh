@@ -10,7 +10,7 @@ cd $TOME/module
 zip -r $TOME/Up/$(getmodun id)_$(getmodun version).zip *
 upenv VER "V$(getmodun version)"
 upenv VUR "$(getmodun version)"
-upenv BOR "$(cat $TOME/module/log.md | sed -n "/#### $VER/,/####/P" | sed -e "/#/d" | sed '$d' | sed -z "s/\n/<br\/>/g")"
+upenv BOR "$(cat $TOME/module/log.md | sed -n "/#### $VER/,/####/P" | sed "/#/d" | sed '1d' | sed '$d' | sed -z "s/\n/<br\/>/g")"
 
 echo '
 {
