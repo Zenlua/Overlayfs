@@ -17,7 +17,7 @@ jobs:
           name: Overlayfs ${{ env.VUR }}
           tag_name: ${{ env.VER }}
           files: Up/*
-          body: "${{ env.BOR }}"
+          body_path: log.txt
       - name: Upload json
         uses: softprops/action-gh-release@v1
         with:
