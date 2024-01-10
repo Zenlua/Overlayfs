@@ -46,9 +46,9 @@ ui_print
 ui_print "  Test overlayfs"
 mkdir -p $MODPATH/test $MODPATH/test2
 echo > $MODPATH/test/a123
-mount -t overlay "kakathic" -o upperdir=$MODPATH/test,lowerdir=$MODPATH/test2,workdir=$MODPATH/work $MODPATH/test2
+/system/bin/mount -t overlay "kakathic" -o upperdir=$MODPATH/test,lowerdir=$MODPATH/test2,workdir=$MODPATH/work $MODPATH/test2
 [ -e $MODPATH/test2/a123 ] && ui_print "  Success" || abort "  Failed"
-umount $MODPATH/test2
+/system/bin/umount $MODPATH/test2
 rm -fr $MODPATH/test $MODPATH/test2 $MODPATH/work
 ui_print
 }
