@@ -3,7 +3,7 @@ TOME="$GITHUB_WORKSPACE"
 mkdir -p $TOME/Up $TOME/tmp2
 
 getmodun(){ grep -m1 "$1=" $TOME/module/module.prop | cut -d= -f2; }
-upenv(){ echo "$1='$2'" >> $GITHUB_ENV; eval "$1='$2'"; }
+upenv(){ echo "$1=$2" >> $GITHUB_ENV; eval "$1=$2"; }
 
 cd $TOME/module
 
