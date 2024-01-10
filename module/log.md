@@ -1,8 +1,8 @@
-1.1
+V1.1
 
 + Fix bootloop
 + Update some more partitions 
 
-1.0
+V1.0
 
 + First version
