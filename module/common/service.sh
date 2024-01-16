@@ -1,6 +1,6 @@
 # kakathic
 MODP="${0%/*}"
-MSGP="$(magisk --path 2>/dev/null)/.magisk/mirror"
+#MSGP="$(magisk --path 2>/dev/null)/.magisk/mirror"
 
 for TV in $(cat $MODP/partition); do
 if [ ! -L $TV ];then
@@ -21,6 +21,6 @@ for TV in $(cat $MODP/partition); do
 if [ ! -L $TV ];then
 #mount -t overlay kakathic_ro -o lowerdir=$MODP$TV:$TV $TV
 mount -t overlay kakathic -o upperdir=$MODP$TV,lowerdir=$TV,workdir=$MODP/zption/tmp$TV $TV
-[ -e $MSGP/system ] && mount -t overlay magisk -o upperdir=$MODP$TV,lowerdir=$MSGP$TV,workdir=$MODP/zption/tmp2$TV $MSGP$TV
+#[ -e $MSGP/system ] && mount -t overlay magisk -o upperdir=$MODP$TV,lowerdir=$MSGP$TV,workdir=$MODP/zption/tmp2$TV $MSGP$TV
 fi
 done
