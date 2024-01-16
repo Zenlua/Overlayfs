@@ -14,11 +14,6 @@
 
 + Customizable features in module.prop
 
-**Read and write**
-
-+ Default is rw
-+ Can be changed to (ro) edit in module.prop (rw=false)
-
 **Grant selinux**
 
 + Automatically granting selinux permissions can only be 90% correct, if you understand, you should grant permissions manually
