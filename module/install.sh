@@ -26,7 +26,7 @@ echo "$KS1" >> $MODPATH/partition
 mkdir -p $MODPATH$KS1
 setfattr -n trusted.overlay.opaque -v y $MODPATH$KS1
 mkdir -p $MODPATH/zption/tmp$KS1
-mkdir -p $MODPATH/zption/tmp2$KS1
+#mkdir -p $MODPATH/zption/tmp2$KS1
 done
 # tạo tùy chọn 
 [ "$(grep_prop chmod $TMPDIR/module.prop)" == "true" ] && echo > $MODPATH/zption/chmod
