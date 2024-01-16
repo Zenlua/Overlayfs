@@ -1,15 +1,10 @@
 id=overlayfs
-name=Overlayfs partition
+name=Overlayfs RW
 author=kakathic
-description=Allow write and read permissions ,latest overlayfs mount system, only for magisk, module will not interfere with other modules
-version=1.1
-versionCode=101
+description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel
+version=1.2
+versionCo1de=102
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
-
-# Grant read and write permissions to the system
-# true: read and write
-# false: read only
-rw=true
 
 # Auto grant selinux permissions, ( If you understand selinux, granting permissions manually will be more accurate )
 # true: auto
@@ -29,8 +24,10 @@ chown=true
 # Backup files when updating modules
 # true: yes
 # false: no
-backup=false
+backup=true
 
 # Partition list is overlayfs r/w
 # Only necessary partitions should be added, unused partitions should not be added
-partition=/product /system_ext /odm /mi_ext /cust /system/app /system/etc /system/fonts /system/framework /system/priv-app /system/vendor /system/system_ext /system/system_ext /vendor/app /vendor/data-app /vendor/lib /vendor/lib64 /vendor/overlay /vendor/etc
+partition=/vendor/app /vendor/data-app /vendor/lib /vendor/lib64 /vendor/overlay /vendor/etc /system/app /system/etc /system/fonts /system/framework /system/priv-app /system/vendor /system/system_ext /product /system_ext /odm /mi_ext /cust
+
+
