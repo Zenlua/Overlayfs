@@ -14,7 +14,6 @@ done
 while true; do
 [ "$(getprop sys.boot_completed)" == 1 ] && break || sleep 1
 done
-sleep 5
 
 # overlay fs
 for TV in $(cat $MODP/partition); do
