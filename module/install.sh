@@ -1,9 +1,9 @@
 # kakathic
 
 # Để true để bỏ qua Mount system
-SKIPMOUNT=true
+SKIPMOUNT=false
 # Để true nó sẽ kết hợp system.prop vào build.prop
-PROPFILE=false
+PROPFILE=true
 # Để true post-fs-data.sh được sử dụng
 POSTFSDATA=true
 # Để true để service.sh được sử dụng
@@ -26,11 +26,9 @@ echo "$KS1" >> $MODPATH/partition
 mkdir -p $MODPATH$KS1
 setfattr -n trusted.overlay.opaque -v y $MODPATH$KS1
 mkdir -p $MODPATH/zption/tmp$KS1
+mkdir -p $MODPATH/zption/tmp2$KS1
 done
-mkdir -p $MODPATH/work
-ui_print
-ui_print "  Create options"
-[ "$(grep_prop rw $TMPDIR/module.prop)" == "true" ] && echo > $MODPATH/zption/rw
+# tạo tùy chọn 
 [ "$(grep_prop chmod $TMPDIR/module.prop)" == "true" ] && echo > $MODPATH/zption/chmod
 [ "$(grep_prop chown $TMPDIR/module.prop)" == "true" ] && echo > $MODPATH/zption/chown
 [ "$(grep_prop chcon $TMPDIR/module.prop)" == "true" ] && echo > $MODPATH/zption/chcon
@@ -42,14 +40,6 @@ for KS3 in $(ls -d1 /data/adb/modules/overlayfs/*); do
 [ -d "$KS3" ] && cp -acf $KS3 $MODPATH
 done
 fi
-ui_print
-ui_print "  Test overlayfs"
-mkdir -p $MODPATH/test $MODPATH/test2
-echo > $MODPATH/test/a123
-/system/bin/mount -t overlay "kakathic" -o upperdir=$MODPATH/test,lowerdir=$MODPATH/test2,workdir=$MODPATH/work $MODPATH/test2
-[ -e $MODPATH/test2/a123 ] && ui_print "  Success" || abort "  Failed"
-/system/bin/umount $MODPATH/test2
-rm -fr $MODPATH/test $MODPATH/test2 $MODPATH/work
 ui_print
 }
 
