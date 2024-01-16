@@ -1,7 +1,6 @@
 # kakathic
 MODP="${0%/*}"
 #MSGP="$(magisk --path 2>/dev/null)/.magisk/mirror"
-rm -fr $MODP/zption/check
 
 for TV in $(cat $MODP/partition); do
 if [ ! -L $TV ] && [ ! -e $MODP/zption/check ];then
