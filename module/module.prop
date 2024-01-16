@@ -3,7 +3,7 @@ name=Overlayfs RW
 author=kakathic
 description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel
 version=1.2
-versionCo1de=102
+versionCo1de=121
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
 
 # Auto grant selinux permissions, ( If you understand selinux, granting permissions manually will be more accurate )
