@@ -14,6 +14,7 @@ done
 while true; do
 [ "$(getprop sys.boot_completed)" == 1 ] && break || sleep 1
 done
+sleep 120
 
 # overlay fs
 for TV in $(cat $MODP/partition); do
@@ -21,6 +22,7 @@ if [ ! -L $TV ] && [ ! -e $MODP/zption/check ];then
 #mount -t overlay kakathic_ro -o lowerdir=$MODP$TV:$TV $TV
 mount -t overlay kakathic -o upperdir=$MODP$TV,lowerdir=$TV,workdir=$MODP/zption/tmp$TV $TV
 #[ -e $MSGP/system ] && mount -t overlay magisk -o upperdir=$MODP$TV,lowerdir=$MSGP$TV,workdir=$MODP/zption/tmp2$TV $MSGP$TV
+sleep 1
 else
 umount -l $TV
 fi
