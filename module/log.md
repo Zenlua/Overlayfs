@@ -4,6 +4,7 @@
 
 #### V1.2
 
++ Add a 2 minute timeout after successful boot will rw
 + Fully updated to support more magisks
 + Default backup option on
 + Remove overlayfs check feature
