@@ -1,9 +1,10 @@
 # kakathic
 MODP="${0%/*}"
 #MSGP="$(magisk --path 2>/dev/null)/.magisk/mirror"
+rm -fr $MODP/zption/check
 
 for TV in $(cat $MODP/partition); do
-if [ ! -L $TV ];then
+if [ ! -L $TV ] && [ ! -e $MODP/zption/check ];then
 [ -e $MODP/zption/chcon ] && chcon -Rh "$(ls -Z -d $TV | awk '{print $1}')" $MODP$TV
 [ -e $MODP/zption/chmod ] && chmod -R 755 $MODP$TV
 [ -e $MODP/zption/chown ] && chown -Rh 0:0 $MODP$TV
@@ -18,9 +19,14 @@ sleep 5
 
 # overlay fs
 for TV in $(cat $MODP/partition); do
-if [ ! -L $TV ];then
+if [ ! -L $TV ] && [ ! -e $MODP/zption/check ];then
 #mount -t overlay kakathic_ro -o lowerdir=$MODP$TV:$TV $TV
 mount -t overlay kakathic -o upperdir=$MODP$TV,lowerdir=$TV,workdir=$MODP/zption/tmp$TV $TV
 #[ -e $MSGP/system ] && mount -t overlay magisk -o upperdir=$MODP$TV,lowerdir=$MSGP$TV,workdir=$MODP/zption/tmp2$TV $MSGP$TV
+else
+umount -l $TV
 fi
 done
+
+# end
+echo > $MODP/zption/check
