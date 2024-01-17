@@ -20,8 +20,8 @@ on_install() {
 ui_print
 ui_print "  Create overlayrw"
 ui_print
-mkdir -p $MODPATH/system/bin
-cp -rf $TMPDIR/overlayrw $MODPATH/system/bin
+mkdir -p $MODPATH/product/bin
+cp -rf $TMPDIR/overlayrw $MODPATH/product/bin
 if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/skip_mount" ];then
 ui_print "  Start backup"
 rm -fr /data/adb/modules/overlayfs/zoption
