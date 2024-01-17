@@ -4,7 +4,7 @@
 
 #### V1.2
 
-+ From now on, customizing rw with the command will not be automatic
++ added auto mode again
 + Command: `overlayrw [path_folder_rw]`
 + For example: overlayrw /system/app
 + Will rw the entire /system/app directory
