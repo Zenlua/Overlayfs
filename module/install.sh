@@ -1,7 +1,7 @@
 # kakathic
 
 # Để true để bỏ qua Mount system
-magisk && SKIPMOUNT=true || SKIPMOUNT=false
+[ "$(magisk --path)" ] && SKIPMOUNT=true || SKIPMOUNT=false
 # Để true nó sẽ kết hợp system.prop vào build.prop
 PROPFILE=true
 # Để true post-fs-data.sh được sử dụng
