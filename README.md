@@ -1,5 +1,7 @@
 # OverlayFS RW
 
+[![Build module](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml/badge.svg)](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml)
+
 + [Update log](./module/log.md)
 
 + Use magisk to flash the module, can use any root manager not just magisk
