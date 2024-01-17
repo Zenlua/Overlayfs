@@ -1,3 +1,4 @@
+#!/system/bin/sh
 MODPATH="/data/adb/modules/overlayfs"
 MODTMP="/dev"
 if [ -d $1 ] && [ ! -L $1 ];then
