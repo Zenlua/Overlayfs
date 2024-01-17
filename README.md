@@ -23,3 +23,9 @@
 **Backup**
 
 + Will automatically back up old items added or deleted
+
+**Partition list**
+
++ `/product/app`, for example, will allow rw to this directory
+
++ For magisk be careful when adding partition it may bootloop
