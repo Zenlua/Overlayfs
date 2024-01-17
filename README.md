@@ -30,7 +30,7 @@
 
 + For magisk be careful when adding partition it may bootloop
 
-+ Note that you should only add partitions that you use, do not add strange partitions that may be bootlooped
++ Note that you should only add partitions with apk, do not add strange partitions that may be bootlooped
 
 
 
