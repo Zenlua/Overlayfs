@@ -20,7 +20,7 @@ on_install() {
 ui_print
 ui_print "  Create overlayrw"
 ui_print
-for TV in $(getprop 'partition=' $MODP/module.prop | cut -d= -f2); do
+for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 ui_print $TV
 done
 ui_print
