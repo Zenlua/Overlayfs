@@ -20,6 +20,10 @@ on_install() {
 ui_print
 ui_print "  Create overlayrw"
 ui_print
+for TV in $(getprop 'partition=' $MODP/module.prop | cut -d= -f2); do
+ui_print $TV
+done
+ui_print
 mkdir -p $MODPATH/product/bin
 cp -rf $TMPDIR/overlayrw $MODPATH/product/bin
 if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/skip_mount" ];then
