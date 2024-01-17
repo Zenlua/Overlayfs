@@ -4,7 +4,8 @@
 
 #### V1.2
 
-+ added auto mode again
++ Added bootloop drum feature, waiting time 3 minutes 180 seconds, Timeout automatically turns off the overlayfs module
++ Added auto mode again
 + Command: `overlayrw [path_folder_rw]`
 + For example: overlayrw /system/app
 + Will rw the entire /system/app directory
