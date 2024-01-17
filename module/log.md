@@ -6,6 +6,8 @@
 
 + From now on, customizing rw with the command will not be automatic
 + Command: `overlayrw [path_folder_rw]`
++ For example: overlayrw /system/app
++ Will rw the entire /system/app directory
 + Fully updated to support more magisks
 + Default backup option on
 + Remove rw option in module.prop
