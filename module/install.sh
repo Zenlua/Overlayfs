@@ -21,12 +21,14 @@ ui_print
 ui_print "  Create overlayrw"
 ui_print
 mkdir -p $MODPATH/system/bin
+if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/skip_mount" ];then
 cp -rf $TMPDIR/overlayrw $MODPATH/system/bin
 ui_print "  Start backup"
 for KS3 in $(ls -d1 /data/adb/modules/overlayfs/*); do
 [ -d "$KS3" ] && cp -acf $KS3 $MODPATH
 done
 ui_print
+fi
 }
 
 # Cấp quyền
