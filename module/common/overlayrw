@@ -3,6 +3,10 @@ mkdir -p $MODPATH$1
 #setfattr -n trusted.overlay.opaque -v y $MODPATH$1
 mkdir -p $MODPATH/zption/tmp$1
 mount -t overlay kakathic -o upperdir=$MODPATH$1,lowerdir=$1,workdir=/$MODPATH/zption/tmp$1 $1 && echo "Mount: $1 done." || echo "Mount: $1 failure."
+elif [ -z $1 ] || [ "$1" == "--help" ];then
+echo "Use: overlayrw [path_folder_rw]"
+echo "Instruct: overlayrw /system/app"
+echo "After running the command, you can edit files in that directory, except that some links cannot be edited."
 else
 echo "Error: Path is not directory, link";
 exit 1
