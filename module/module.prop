@@ -6,3 +6,8 @@ version=1.2
 versionCo1de=122
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
 backup=true
+
+# Partition list is overlayfs r/w
+# Only necessary partitions should be added, unused partitions should not be added
+partition=/vendor/app /vendor/data-app /vendor/overlay /system/app /system/fonts /system/framework /system/priv-app /system/vendor /system/system_ext /product /system_ext /odm /mi_ext /cust
+
