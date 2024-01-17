@@ -4,11 +4,11 @@
 
 #### V1.2
 
-+ Add a 2 minute timeout after successful boot will rw
++ From now on, customizing rw with the command will not be automatic
++ Command: `overlayrw [path_folder_rw]`
 + Fully updated to support more magisks
 + Default backup option on
-+ Remove overlayfs check feature
-+ Remove rw option in module.prop, default is rw so that option is useless
++ Remove rw option in module.prop
 
 #### V1.1
 
