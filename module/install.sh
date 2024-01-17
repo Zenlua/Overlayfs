@@ -26,7 +26,6 @@ ui_print "  Start backup"
 for KS3 in $(ls -d1 /data/adb/modules/overlayfs/*); do
 [ -d "$KS3" ] && cp -acf $KS3 $MODPATH
 done
-fi
 ui_print
 }
 
