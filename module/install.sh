@@ -24,6 +24,7 @@ mkdir -p $MODPATH/system/bin
 cp -rf $TMPDIR/overlayrw $MODPATH/system/bin
 if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/skip_mount" ];then
 ui_print "  Start backup"
+rm -fr /data/adb/modules/overlayfs/zoption
 for KS3 in $(ls -d1 /data/adb/modules/overlayfs/*); do
 [ -d "$KS3" ] && cp -acf $KS3 $MODPATH
 done
