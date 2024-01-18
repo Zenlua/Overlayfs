@@ -3,11 +3,17 @@ name=Overlayfs RW
 author=kakathic
 description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel
 version=1.2
-versionCo1de=123
+versionCode=120
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
+
+# Early or late mount mode
+# 1. boot completed, 2. fs data
+vipmount=1
+
+# Enable backup feature
+# true/false
 backup=true
 
 # Partition list is overlayfs r/w
 # Only necessary partitions should be added, unused partitions should not be added
-partition=/vendor/app /vendor/data-app /vendor/overlay /system/app /system/fonts /system/framework /system/priv-app /system/vendor /system/system_ext /product /system_ext /odm /mi_ext /cust
-
+partition=/system/app /system/fonts /system/etc /system/framework /system/priv-app /system/media /system/vendor/app /system/vendor/data-app /system/vendor/lib /system/vendor/lib64 /system/vendor/overlay /system/vendor/etc /system/product/app /system/product/priv-app /system/product/fonts /system/product/etc /system/product/overlay /system/product/media /system/system_ext/app /system/system_ext/priv-app /system/system_ext/framework /system/system_ext/cust /system/system_ext/etc
