@@ -28,6 +28,7 @@ done
 ui_print " "
 mkdir -p $MODPATH/system/product/bin
 cp -rf $TMPDIR/overlayrw $MODPATH/system/product/bin
+[ "$(magisk --path)" ] && sed -i "s|vipmount=1|vipmount=1|g" $TMPDIR/module.prop
 if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/service.sh" ];then
 ui_print "  Start backup"
 rm -fr /data/adb/modules/overlayfs/zoption
