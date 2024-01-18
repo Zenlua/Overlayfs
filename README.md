@@ -23,6 +23,7 @@
 **Vip module**
 
 1. This mode is stable and supports many root managers
+
 2. This mode only supports Magisk Canary 26400 and above. Waiting for Magisk official support, you can also use it.
 
 + The module will animate the overlay fs form, not the works form like magisk
