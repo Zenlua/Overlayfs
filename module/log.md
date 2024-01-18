@@ -1,6 +1,8 @@
-## Changerlog
+## Changerlog Overlay FS
 
-+ Github: [Overlayfs](https://github.com/Zenlua/Overlayfs) |  [Telegram](https://t.me/toolmod)
++ Github: [Zenlua/Overlayfs](https://github.com/Zenlua/Overlayfs)
+
++ Report: [Telegram](https://t.me/toolmod)
 
 #### V1.2
 
