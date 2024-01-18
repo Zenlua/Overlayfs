@@ -7,8 +7,8 @@ versionCode=120
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
 
 # Early or late mount mode
-# 1. boot completed, 2. fs data
-vipmount=1
+# 1. boot completed, 2. fs data, auto. auto selected
+vipmount=auto
 
 # Enable backup feature
 # true/false
