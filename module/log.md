@@ -4,7 +4,7 @@
 
 #### V1.2
 
-+ Added bootloop drum feature, waiting time 3 minutes 180 seconds, Timeout automatically turns off the overlayfs module
++ Added bootloop drum feature, waiting time 2 minutes 120 seconds, Timeout automatically turns off the overlayfs module
 + Added auto mode again
 + Command: `overlayrw [path_folder_rw]`
 + For example: overlayrw /system/app
@@ -12,6 +12,7 @@
 + Fully updated to support more magisks
 + Default backup option on
 + Remove rw option in module.prop
++ Added early or late start feature
 
 #### V1.1
 
