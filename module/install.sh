@@ -30,7 +30,7 @@ mkdir -p $MODPATH/system/product/bin
 cp -rf $TMPDIR/overlayrw $MODPATH/system/product/bin
 # auto
 if [ "$(magisk --path)" ];then
-[ $MAGISK_VER_CODE -ge 26400 ] && sed -i "s|vipmount=auto|vipmount=2|g" $TMPDIR/module.prop || sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
+[ $MAGISK_VER_CODE -ge 26404 ] && sed -i "s|vipmount=auto|vipmount=2|g" $TMPDIR/module.prop || sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
 else
 sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
 fi
