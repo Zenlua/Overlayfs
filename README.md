@@ -24,7 +24,7 @@
 
 1. This mode is stable and supports many root managers (If used for Magisk, it may cause cash app, depending on version)
 
-2. This mode only supports Magisk Canary 26400 and above. Waiting for Magisk official support, you can also use it.
+2. This mode only supports Magisk Canary 26404 and above. Waiting for Magisk official support, you can also use it.
 
 + The module will animate the overlay fs form, not the works form like magisk
 
