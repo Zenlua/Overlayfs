@@ -22,7 +22,7 @@
 
 **Vip module**
 
-1. This mode is stable and supports many root managers
+1. This mode is stable and supports many root managers (If used for Magisk, it may cause cash app, depending on version)
 
 2. This mode only supports Magisk Canary 26400 and above. Waiting for Magisk official support, you can also use it.
 
