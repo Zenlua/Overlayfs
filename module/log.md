@@ -1,4 +1,4 @@
-## Changerlog Overlay FS
+## Changelog Overlay FS
 
 + Github: [Zenlua/Overlayfs](https://github.com/Zenlua/Overlayfs)
 
