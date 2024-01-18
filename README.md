@@ -8,11 +8,9 @@
 
 + This module allows to rw partitions present in the list
 
-+ Use command: overlayrw [path folder rw]
++ Use: overlayrw path_folder
 
-+ For example: overlayrw /system/app
-
-+ Will rw the entire /system/app directory
++ Example: overlayrw /system/app ( Will rw the entire /system/app directory )
 
 + Report: [Telegram](https://t.me/toolmod)
 
