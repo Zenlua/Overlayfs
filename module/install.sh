@@ -30,7 +30,6 @@ cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
 ui_print " "
 ui_print "  Save: /data/overlayfs"
 ui_print " "
-fi
 }
 
 # Cấp quyền
