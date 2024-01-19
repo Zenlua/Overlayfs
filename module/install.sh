@@ -25,20 +25,14 @@ if [ -d $TV ];then
 ui_print "  $TV"
 fi
 done
-ui_print " "
-cp -rf $TMPDIR/overlayrw $MODPATH
-if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/service.sh" ];then
-ui_print "  Start backup"
-rm -fr /data/adb/modules/overlayfs/zoption
-for KS3 in $(ls -d /data/adb/modules/overlayfs/*); do
-[ -d "$KS3" ] && cp -acf $KS3 $MODPATH
-done
+mkdir -p /data/overlayfs/system/product/bin
+cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
 ui_print " "
 fi
 }
 
 # Cấp quyền
 set_permissions() { 
-set_perm_recursive $MODPATH/system/product/bin 0 0 0755 0755 u:object_r:system_file:s0
+set_perm_recursive /data/overlayfs/system/product/bin 0 2000 0755 0755 u:object_r:system_file:s0
 }
 
