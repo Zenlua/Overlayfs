@@ -20,9 +20,9 @@
 
 **Vip module**
 
-1. This mode is stable and supports many root managers (If used for Magisk, it may cause cash app, depending on version)
+1. This mode supports many devices. If there is an error that the application cannot be opened, please switch to number 2
 
-2. This mode only supports Magisk Canary 26404 and above. Waiting for Magisk official support, you can also use it.
+2. This mode supports few devices
 
 + The module will animate the overlay fs form, not the works form like magisk
 
