@@ -1,7 +1,7 @@
 # kakathic
 
 # Để true để bỏ qua Mount system
-SKIPMOUNT=false
+SKIPMOUNT=true
 # Để true nó sẽ kết hợp system.prop vào build.prop
 PROPFILE=true
 # Để true post-fs-data.sh được sử dụng
@@ -26,18 +26,10 @@ ui_print "  $TV"
 fi
 done
 ui_print " "
-mkdir -p $MODPATH/system/product/bin
-cp -rf $TMPDIR/overlayrw $MODPATH/system/product/bin
-# auto
-if [ "$(magisk --path)" ];then
-[ $MAGISK_VER_CODE -ge 26404 ] && sed -i "s|vipmount=auto|vipmount=2|g" $TMPDIR/module.prop || sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
-else
-sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
-fi
+cp -rf $TMPDIR/overlayrw $MODPATH
 if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/service.sh" ];then
 ui_print "  Start backup"
 rm -fr /data/adb/modules/overlayfs/zoption
-rm -fr /data/adb/modules/overlayfs/system/product/bin/overlayrw
 for KS3 in $(ls -d /data/adb/modules/overlayfs/*); do
 [ -d "$KS3" ] && cp -acf $KS3 $MODPATH
 done
