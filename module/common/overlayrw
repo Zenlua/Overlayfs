@@ -9,9 +9,11 @@ chcon -Rh "$(ls -nZld "$1" | awk '{print $5}')" "$MODP$1"
 chmod -R 755 "$MODP$1"
 chown -Rh $(ls -nZld "$1" | awk '{print $3":"$4}') "$MODP$1"
 mount -t overlay kakathic -o upperdir=$MODP$1,lowerdir=$1,workdir=$TMPP$1 $1 && echo "Mount: $1 done" || echo "Mount: $1 failure !"
-elif [ -z $1 ] || [ "$1" == "--help" ];then
+elif [ -z "$1" ] || [ "$1" == "--help" ];then
 echo "Use: overlayrw [path_folder_rw]"
+echo
 echo "Instruct: overlayrw /system/app"
+echo
 echo "After running the command, you can edit files in that directory"
 else
 echo "Error: Path $1 is not directory";
