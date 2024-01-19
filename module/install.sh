@@ -18,7 +18,7 @@ ui_print "  Name: $(grep_prop name $TMPDIR/module.prop), $(grep_prop version $TM
 # Bắt đầu cài đặt
 on_install() {
 ui_print " "
-ui_print "  Create overlayrw"
+ui_print "  Create partition"
 ui_print " "
 for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
@@ -27,6 +27,8 @@ fi
 done
 mkdir -p /data/overlayfs/system/product/bin
 cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
+ui_print " "
+ui_print "  Save: /data/overlayfs"
 ui_print " "
 fi
 }
