@@ -2,7 +2,9 @@
 
 [![Build module](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml/badge.svg)](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml)
 
-+ Update: [Changelog](./module/log.md)
++ Update: [Release](https://github.com/Zenlua/Overlayfs/releases) | [Changelog](./module/log.md)
+
++ Report: [Telegram](https://t.me/toolmod)
 
 + Use magisk to flash the module, can use any root manager not just magisk
 
@@ -11,8 +13,6 @@
 + Use: `overlayrw path_folder`
 
 + Example: overlayrw /system/app ( Will rw the entire /system/app directory )
-
-+ Report: [Telegram](https://t.me/toolmod)
 
 #### Functions
 
