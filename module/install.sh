@@ -22,13 +22,13 @@ ui_print "  Create partition"
 ui_print " "
 for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
+ui_print "  $TV"
 echo "$TV" >> /data/overlayfs/tmp/partition
 [ "$(grep -cm1 "$TV" /data/overlayfs/tmp/partition 2>/dev/null)" == 1 ] || echo "$TV" >> /data/overlayfs/tmp/partition
 fi
 done
 Text="$(cat /data/overlayfs/tmp/partition | sort | uniq)"
 echo "$Text" > tee /data/overlayfs/tmp/partition
-ui_print "  $Text"
 mkdir -p /data/overlayfs/system/product/bin /data/overlayfs/tmp
 cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
 cp -rf $TMPDIR/toybox /data/overlayfs/tmp
