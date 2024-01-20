@@ -29,9 +29,8 @@ fi
 done
 Text="$(cat /data/overlayfs/tmp/partition | sort | uniq)"
 echo "$Text" > tee /data/overlayfs/tmp/partition
-mkdir -p /data/overlayfs/system/product/bin /data/overlayfs/tmp
+mkdir -p /data/overlayfs/system/product/bin
 cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
-cp -rf $TMPDIR/toybox /data/overlayfs/tmp
 ui_print " "
 ui_print "  Save: /data/overlayfs"
 ui_print " "
@@ -40,6 +39,5 @@ ui_print " "
 # Cấp quyền
 set_permissions() { 
 set_perm_recursive /data/overlayfs/system/product/bin 0 2000 0755 0755 u:object_r:system_file:s0
-set_perm_recursive /data/overlayfs/tmp 0 2000 0755 0755 u:object_r:system_file:s0
 }
 
