@@ -27,6 +27,8 @@ echo "$TV" >> /data/overlayfs/tmp/partition
 [ "$(grep -cm1 "$TV" /data/overlayfs/tmp/partition 2>/dev/null)" == 1 ] || echo "$TV" >> /data/overlayfs/tmp/partition
 fi
 done
+Text="$(cat /data/overlayfs/tmp/partition | sort | uniq)"
+echo "$Text" > /data/overlayfs/tmp/partition
 mkdir -p /data/overlayfs/system/product/bin /data/overlayfs/tmp
 cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
 cp -rf $TMPDIR/toybox /data/overlayfs/tmp
