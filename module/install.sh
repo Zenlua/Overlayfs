@@ -28,7 +28,7 @@ echo "$TV" >> /data/overlayfs/tmp/partition
 fi
 done
 Text="$(cat /data/overlayfs/tmp/partition | sort | uniq)"
-echo "$Text" > tee /data/overlayfs/tmp/partition
+echo "$Text" > /data/overlayfs/tmp/partition
 mkdir -p /data/overlayfs/system/product/bin
 cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
 ui_print " "
