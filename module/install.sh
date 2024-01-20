@@ -24,6 +24,7 @@ for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
 ui_print "  $TV"
 echo "$TV" >> /data/overlayfs/tmp/partition
+[ "$(grep -cm1 "$TV" /data/overlayfs/tmp/partition 2>/dev/null)" == 1 ] || echo "$TV" >> /data/overlayfs/tmp/partition
 fi
 done
 mkdir -p /data/overlayfs/system/product/bin /data/overlayfs/tmp
