@@ -8,7 +8,6 @@
 
 + Move home to /data/overlayfs
 + Remove the backup feature because from this version only deleting the module will cause data loss, updates will remain the same
-+ Remove vip mount feature
 + Fix some inactivity errors
 + Note that from 1.2 to 1.3 there will be no backup, please switch manually.
 
