@@ -10,6 +10,6 @@ bodem=$(($bodem + 1))
 sleep 1
 done
 
-for TV in $(cat $MODP/partition); do
+for TV in $(cat /data/overlayfs/tmp/partition); do
 [ "$(grep 'vipmount=' $MODP/module.prop | cut -d= -f2)" == 1 ] && overlayrw $TV >> $MODP/log.txt
 done
