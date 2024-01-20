@@ -26,10 +26,6 @@
 
 + The module will animate the overlay fs form, not the works form like magisk
 
-**Backup**
-
-+ Will automatically back up old items added or deleted
-
 **Partition list**
 
 + `/product/app`, for example, will allow rw to this directory
