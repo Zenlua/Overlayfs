@@ -3,12 +3,12 @@ MODP="/data/overlayfs"
 TMPP="/data/overlayfs/tmp"
 if [ -d $1 ];then
 mkdir -p $MODP$1
-setfattr -n trusted.overlay.opaque -v y $MODP$1 2>/dev/null
+/data/overlayfs/tmp/toybox setfattr -n trusted.overlay.opaque -v y $MODP$1 2>/dev/null
 mkdir -p $TMPP$1
 chcon -Rh "$(ls -nZld "$1" | awk '{print $5}')" "$MODP$1"
 chmod -R 755 "$MODP$1"
 chown -Rh $(ls -nZld "$1" | awk '{print $3":"$4}') "$MODP$1"
-mount -t overlay kakathic -o upperdir=$MODP$1,lowerdir=$1,workdir=$TMPP$1 $1 && echo "Mount: $1 done" || echo "Mount: $1 failure !"
+/data/overlayfs/tmp/toybox mount -t overlay kakathic -o upperdir=$MODP$1,lowerdir=$1,workdir=$TMPP$1 $1 && echo "Mount: $1 done" || echo "Mount: $1 failure !"
 elif [ -z "$1" ] || [ "$1" == "--help" ];then
 echo "Use: overlayrw [path_folder_rw]"
 echo
