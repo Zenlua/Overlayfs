@@ -23,6 +23,7 @@ ui_print " "
 for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
 ui_print "  $TV"
+echo "$TV" >> $MODPATH/partition
 fi
 done
 mkdir -p /data/overlayfs/system/product/bin /data/overlayfs/tmp
