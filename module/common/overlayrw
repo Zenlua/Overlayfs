@@ -8,7 +8,7 @@ mkdir -p "$TMPP$2"
 chcon -Rh "$(ls -nZld "$2" | awk '{print $5}')" "$MODP$2"
 chmod -R 755 "$MODP$2"
 chown -Rh $(ls -nZld "$2" | awk '{print $3":"$4}') "$MODP$2"
-mount -v -t overlay kakathic -o "lowerdir=$MODP$TV:$2" "$2" && echo "Mount: $2 done"
+mount -v -t overlay kakathic -o "lowerdir=$MODP$2:$2" "$2" && echo "Mount: $2 done"
 [ "$(grep -cm1 "$2" /data/overlayfs/tmp/partition)" == 1 ] || echo "$2" >> /data/overlayfs/tmp/partition
 elif [ -d "$1" ];then
 mkdir -p "$MODP$1"
