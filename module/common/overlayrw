@@ -1,7 +1,6 @@
 #!/system/bin/sh
 MODP="/data/overlayfs"
 TMPP="/data/overlayfs/tmp"
-
 if [ "$1" == "-ro" ];then
 mkdir -p "$MODP$2"
 setfattr -n trusted.overlay.opaque -v y $MODP$2 2>/dev/null
@@ -18,7 +17,7 @@ mkdir -p "$TMPP$1"
 chcon -Rh "$(ls -nZld "$1" | awk '{print $5}')" "$MODP$1"
 chmod -R 755 "$MODP$1"
 chown -Rh $(ls -nZld "$1" | awk '{print $3":"$4}') "$MODP$1"
-mount -t overlay kakathic -o "upperdir=$MODP$1,lowerdir=$1,workdir=$TMPP$1" "$1" && echo "Mount: $1 done"
+mount -v -t overlay kakathic -o "upperdir=$MODP$1,lowerdir=$1,workdir=$TMPP$1" "$1" && echo "Mount: $1 done"
 [ "$(grep -cm1 "$1" /data/overlayfs/tmp/partition)" == 1 ] || echo "$1" >> /data/overlayfs/tmp/partition
 elif [ -z "$1" ] || [ "$1" == "--help" ];then
 echo "Use: overlayrw [path_folder_rw]"
