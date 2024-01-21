@@ -1,7 +1,7 @@
 # kakathic
 
 # Để true để bỏ qua Mount system
-SKIPMOUNT=true
+SKIPMOUNT=false
 # Để true nó sẽ kết hợp system.prop vào build.prop
 PROPFILE=true
 # Để true post-fs-data.sh được sử dụng
@@ -18,25 +18,34 @@ ui_print "  Name: $(grep_prop name $TMPDIR/module.prop), $(grep_prop version $TM
 # Bắt đầu cài đặt
 on_install() {
 ui_print " "
-ui_print "  Create partition"
+ui_print "  Create overlayrw"
 ui_print " "
 for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
 ui_print "  $TV"
-[ "$(grep -cm1 "$TV" /data/overlayfs/tmp/partition 2>/dev/null)" == 1 ] || echo "$TV" >> /data/overlayfs/tmp/partition
 fi
 done
-Text="$(cat /data/overlayfs/tmp/partition | sort | uniq)"
-echo "$Text" > /data/overlayfs/tmp/partition
-mkdir -p /data/overlayfs/system/product/bin
-cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
 ui_print " "
-ui_print "  Save: /data/overlayfs"
+mkdir -p $MODPATH/system/product/bin
+cp -rf $TMPDIR/overlayrw $MODPATH/system/product/bin
+# auto
+if [ "$(magisk --path)" ];then
+[ $MAGISK_VER_CODE -ge 26404 ] && sed -i "s|vipmount=auto|vipmount=2|g" $TMPDIR/module.prop || sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
+else
+sed -i "s|vipmount=auto|vipmount=1|g" $TMPDIR/module.prop
+fi
+if [ "$(grep_prop backup $TMPDIR/module.prop)" == "true" ] && [ -e "/data/adb/modules/overlayfs/service.sh" ];then
+ui_print "  Start backup"
+rm -fr /data/adb/modules/overlayfs/zoption
+rm -fr /data/adb/modules/overlayfs/system/product/bin/overlayrw
+for KS3 in $(ls -d /data/adb/modules/overlayfs/*); do
+[ -d "$KS3" ] && cp -acf $KS3 $MODPATH
+done
 ui_print " "
+fi
 }
 
 # Cấp quyền
 set_permissions() { 
-set_perm_recursive /data/overlayfs/system/product/bin 0 2000 0755 0755 u:object_r:system_file:s0
+set_perm_recursive $MODPATH/system/product/bin 0 0 0755 0755 u:object_r:system_file:s0
 }
-
