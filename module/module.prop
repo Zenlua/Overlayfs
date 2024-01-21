@@ -3,7 +3,7 @@ name=Overlayfs RW
 author=kakathic
 description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel
 version=1.3
-versionCode=130
+versionCode=131
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
 # Select mount mode
 # 1. Supports many devices ( If you have an error and can't open the app, go to 2 )
