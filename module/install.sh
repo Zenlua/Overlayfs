@@ -30,7 +30,7 @@ done
 Text="$(cat /data/overlayfs/tmp/partition | sort | uniq)"
 echo "$Text" > /data/overlayfs/tmp/partition
 cp -rf $TMPDIR/overlayrw /data/overlayfs/system/product/bin
-[ -e "$(magisk --path)/.magisk/mirror/system” ] && sed -i "s|vipmount=2|vipmount=1|g" $TMPDIR/module.prop
+[ -e "$(magisk --path)/.magisk/mirror/system" ] && sed -i "s|vipmount=2|vipmount=1|g" $TMPDIR/module.prop
 ui_print " "
 ui_print "  Save: /data/overlayfs"
 ui_print " "
