@@ -6,6 +6,7 @@
 
 #### V1.3
 
++ Fix all
 + Fix mount
 + Move home to /data/overlayfs
 + Remove the backup feature because from this version only deleting the module will cause data loss, updates will remain the same
