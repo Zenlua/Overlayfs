@@ -21,10 +21,6 @@ ui_print " "
 ui_print "  Create partition"
 ui_print " "
 mkdir -p /data/overlayfs/tmp /data/overlayfs/system/product/bin
-ln -sf /data/overlayfs/system/product $MODPATH/product
-ln -sf /data/overlayfs/system/system_ext $MODPATH/system_ext
-ln -sf /data/overlayfs/system/vendor $MODPATH/vendor
-ln -sf /data/overlayfs/system $MODPATH/system
 for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
 ui_print "  $TV"
