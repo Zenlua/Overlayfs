@@ -3,6 +3,9 @@ MODP="${0%/*}"
 rm -fr $MODP/log.txt
 if [ "$(grep 'vipmount=' "$MODP/module.prop" | cut -d= -f2)" == 1 ];then
 rm -fr "$MODP/skip_mount"
+for TV in $(cat /data/overlayfs/tmp/partition); do
+[ -d "$TV" ] && mkdir -p "/data/overlayfs$TV"
+done
 #mount -o bind /data/overlayfs/system "$MODP/system"
 else
 echo > "$MODP/skip_mount"
