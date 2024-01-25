@@ -20,8 +20,7 @@ on_install() {
 ui_print " "
 ui_print "  Create partition"
 ui_print " "
-mkdir -p /data/overlayfs/tmp
-mkdir -p /data/overlayfs/system/product/bin
+mkdir -p /data/overlayfs/tmp /data/overlayfs/system/product/bin $MODPATH/system
 for TV in $(grep 'partition=' $TMPDIR/module.prop | cut -d= -f2); do
 if [ -d $TV ];then
 ui_print "  $TV"
