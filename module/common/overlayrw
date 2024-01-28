@@ -1,27 +1,28 @@
 #!/system/bin/sh
-MODP="/data/overlayfs"
+[ "$1" == "-bind" ] && MODP="/data/overlayfs/$(getprop ro.build.version.incremental)" || MODP="/data/overlayfs"
 TMPP="/data/overlayfs/tmp"
-if [ "$1" == "-ro" ];then
+
+if [ -e "$2" ];then
 mkdir -p "$MODP$2"
+[ "$1" == "-rw" ] && mkdir -p "$TMPP$2"
 setfattr -n trusted.overlay.opaque -v y $MODP$2 2>/dev/null
-chcon -Rh "$(ls -nZld "$2" | awk '{print $5}')" "$MODP$2"
-chmod -R 755 "$MODP$2"
-chown -Rh $(ls -nZld "$2" | awk '{print $3":"$4}') "$MODP$2"
+chcon "$(ls -nZld "$2" | awk '{print $5}')" "$MODP$2"
+chmod 755 "$MODP$2"
+chown $(ls -nZld "$2" | awk '{print $3":"$4}') "$MODP$2"
+[ "$(grep -cm1 "$2" $TMPP/path)" == 1 ] || echo "$2" >> $TMPP/path
+fi
+
+if [ "$1" == "-bind" ];then
+[ -e "$(cat $TMPP/pathxt)" ] || $TMPP/busybox cp -acf "$2"/* "$MODP$2"
+mount -o bind "$MODP$2" "$2" && echo "Mount bind: $2 done"
+elif [ "$1" == "-ro" ];then
 mount -t overlay kakathic -o "lowerdir=$MODP$2:$2" "$2" && echo "Mount RO: $2 done"
-[ "$(grep -cm1 "$2" /data/overlayfs/tmp/partition)" == 1 ] || echo "$2" >> /data/overlayfs/tmp/partition
-elif [ -d "$1" ];then
-mkdir -p "$MODP$1"
-setfattr -n trusted.overlay.opaque -v y $MODP$1 2>/dev/null
-mkdir -p "$TMPP$1"
-chcon -Rh "$(ls -nZld "$1" | awk '{print $5}')" "$MODP$1"
-chmod -R 755 "$MODP$1"
-chown -Rh $(ls -nZld "$1" | awk '{print $3":"$4}') "$MODP$1"
-mount -t overlay kakathic -o "upperdir=$MODP$1,lowerdir=$1,workdir=$TMPP$1" "$1" && echo "Mount RW: $1 done"
-[ "$(grep -cm1 "$1" /data/overlayfs/tmp/partition)" == 1 ] || echo "$1" >> /data/overlayfs/tmp/partition
+elif [ "$1" == "-rw" ];then
+mount -t overlay kakathic -o "upperdir=$MODP$2,lowerdir=$2,workdir=$TMPP$2" "$2" && echo "Mount RW: $2 done"
 elif [ -z "$1" ] || [ "$1" == "--help" ];then
-echo "Use: overlayrw [path_folder_rw]"
+echo "Use: overlayrw [-ro|-rw|-bind] [path_folder]"
 echo
-echo "Instruct: overlayrw /system/app"
+echo "Instruct: overlayrw -rw /system/app"
 echo
 echo "After running the command, you can edit files in that directory"
 else
