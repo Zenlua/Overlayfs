@@ -1,15 +1,19 @@
 # kakathic
+
 MODP="${0%/*}"
+MOP="/data/overlayfs"
+GPat="$(getprop ro.build.version.incremental)"
 rm -fr $MODP/log.txt
-if [ "$(grep 'vipmount=' "$MODP/module.prop" | cut -d= -f2)" == 1 ];then
-rm -fr "$MODP/skip_mount"
-for TV in $(cat /data/overlayfs/tmp/partition); do
-[ -d "$TV" ] && mkdir -p "/data/overlayfs$TV"
-done
-#mount -o bind /data/overlayfs/system "$MODP/system"
-else
-echo > "$MODP/skip_mount"
-for TV in $(cat /data/overlayfs/tmp/partition); do
-/data/overlayfs/system/product/bin/overlayrw "$TV" >> "$MODP/log.txt" 2>> "$MODP/log.txt"
-done
+
+if [ ! -e "$MOP/$GPat" ] && [ -e "$MODP/bind" ];then
+[ -e $MOP/tmp/pathxt ] && rm -fr "$(cat $MOP/tmp/pathxt)"
+mkdir -p "$MOP/$GPat"
 fi
+
+for TV in $(cat $MODP/partition $MOP/tmp/path); do
+if [ -e "$MODP/bind" ];then
+[ -d "$TV" ] && $MOP/tmp/overlayrw -bind "$TV" >> "$MODP/log.txt" 2>> "$MODP/log.txt"
+else
+[ -d "$TV" ] && $MOP/tmp/overlayrw -rw "$TV" >> "$MODP/log.txt" 2>> "$MODP/log.txt"
+fi
+done
