@@ -9,7 +9,7 @@
 + Use magisk to flash the module, can use any root manager not just magisk
 
 ```
-Use: overlayrw [-ro|-rw|-bind] [path_folder]
+Use: /data/overlayfs/tmp/overlayrw [-ro|-rw|-bind] [path_folder]
 
 Instruct: overlayrw -rw /system/app
 
