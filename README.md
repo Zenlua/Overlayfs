@@ -8,25 +8,32 @@
 
 + Use magisk to flash the module, can use any root manager not just magisk
 
-+ This module allows to rw partitions present in the list
+```
+Use: overlayrw [-ro|-rw|-bind] [path_folder]
 
-+ Use: `overlayrw path_folder`
+Instruct: overlayrw -rw /system/app
 
-+ Example: overlayrw /system/app ( Will rw the entire /system/app directory )
+After running the command, you can edit files in that directory
+```
 
-#### Functions
+#### Hide root
 
-+ Customizable features in module.prop
++ If you select root, more rw-allowed partitions will appear
 
-**Vip module**
+> Hidden root
+> Root
 
-1. This mode supports many devices. If there is an error that the application cannot be opened, please switch to number 2
+#### Mount mode
 
-2. This mode supports few devices
+1. Mount Overlay FS
 
-+ The module will animate the overlay fs form, not the works form like magisk
++ Edit the system without saving the file
 
-**Partition list**
+2. Mount Bind
+
++ Need to save data from original ROM the first time it will boot longer 
+
+#### Partition list
 
 + `/product/app`, for example, will allow rw to this directory
 
@@ -34,5 +41,5 @@
 
 + Note that you should only add partitions with apk, do not add strange partitions that may be bootlooped
 
-
++ Some paths, if used, can be detected as root 
 
