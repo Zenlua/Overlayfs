@@ -11,7 +11,7 @@
 ```
 Use: /data/overlayfs/tmp/overlayrw [-ro|-rw|-bind] [path_folder]
 
-Instruct: overlayrw -rw /system/app
+Instruct: /data/overlayfs/tmp/overlayrw -rw /system/app
 
 After running the command, you can edit files in that directory
 ```
