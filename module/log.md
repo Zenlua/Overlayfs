@@ -4,6 +4,12 @@
 
 + Report: [Telegram](https://t.me/toolmod)
 
+#### V1.4
+
++ Use volume key to select
++ Added mount bind option
++ Add hidden root feature
+
 #### V1.3
 
 + Fix all
