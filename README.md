@@ -20,7 +20,7 @@ After running the command, you can edit files in that directory
 
 + If you select root, more rw-allowed partitions will appear
 
-> Hidden root | Root
++ Hidden root | Root
 
 #### Mount mode
 
