@@ -2,6 +2,7 @@
 MODP="${0%/*}"
 #MSGP="$(magisk --path 2>/dev/null)/.magisk/mirror"
 
+# Anti-bootloop 120s
 while true; do
 bodem=$(($bodem + 1))
 [ "$(getprop sys.boot_completed)" == 1 ] && break
@@ -10,8 +11,7 @@ bodem=$(($bodem + 1))
 sleep 1
 done
 
-for TV in $(cat /data/overlayfs/tmp/partition); do
-[ "$(grep 'vipmount=' "$MODP/module.prop" | cut -d= -f2)" == 1 ] && overlayrw "$TV" >> "$MODP/log.txt" 2>> "$MODP/log.txt"
-done
+# log overlay
+[ -e "$MODP/bind" ] && mount | grep 'rw.*.noauto_da_alloc.*.data=ordered' > $MODP/overlay.txt || mount -t overlay > $MODP/overlay.txt
 
-mount -t overlay > $MODP/overlay.txt
+echo "/data/overlayfs/$(getprop ro.build.version.incremental)" > /data/overlayfs/tmp/pathxt
