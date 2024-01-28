@@ -1,1 +1,1 @@
-rm -fr /data/overlayfs
+rm -rf /data/overlayfs
