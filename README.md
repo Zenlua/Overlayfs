@@ -42,3 +42,4 @@ After running the command, you can edit files in that directory
 
 + Some paths, if used, can be detected as root 
 
++ Add link partitions here: /data/overlayfs/tmp/path
