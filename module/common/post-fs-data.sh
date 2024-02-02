@@ -10,7 +10,7 @@ if [ ! -e "$MOP/$GPat" ] && [ -e "$MODP/bind" ];then
 mkdir -p "$MOP/$GPat"
 fi
 
-for TV in $(cat $MODP/partition $MOP/tmp/path); do
+for TV in $(cat $MODP/partition $MOP/tmp/path | sort | uniq); do
 if [ -e "$MODP/bind" ];then
 [ -d "$TV" ] && $MOP/tmp/overlayrw -bind "$TV" >> "$MODP/log.txt" 2>> "$MODP/log.txt"
 else
