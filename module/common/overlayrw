@@ -6,9 +6,9 @@ if [ -e "$2" ];then
 mkdir -p "$MODP$2"
 [ "$1" == "-rw" ] && mkdir -p "$TMPP$2"
 setfattr -n trusted.overlay.opaque -v y $MODP$2 2>/dev/null
-chcon "$(ls -nZld "$2" | awk '{print $5}')" "$MODP$2"
+chcon "$($TMPP/busybox ls -nZld "$2" | awk '{print $5}')" "$MODP$2"
 chmod 755 "$MODP$2"
-chown $(ls -nZld "$2" | awk '{print $3":"$4}') "$MODP$2"
+chown $($TMPP/busybox ls -nZld "$2" | awk '{print $3":"$4}') "$MODP$2"
 [ "$(grep -cm1 "$2" $TMPP/path)" == 1 ] || echo "$2" >> $TMPP/path
 fi
 
