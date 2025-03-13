@@ -9,7 +9,7 @@
 + Use volume key to select
 + Added mount bind option
 + Add hidden root feature
-+ create a link from data/overlayfs in adb/modules/overlayfs
++ Create a link from data/overlayfs in adb/modules/overlayfs
 
 #### V1.3
 
