@@ -92,7 +92,7 @@ cp -rf $TMPDIR/overlayrw $TMPP
 cp -rf $TMPDIR/busybox $TMPP
 cp -rf $TMPDIR/partition $MODPATH
 [ -e $TMPP/path ] || echo > $TMPP/path
-
+ln -sf $MODP $MODPATH
 ui_print " "
 }
 
