@@ -6,31 +6,7 @@
 
 + Report: [Telegram](https://t.me/toolmod)
 
-+ Use magisk to flash the module, can use any root manager not just magisk
-
-```
-Use: /data/overlayfs/tmp/overlayrw [-ro|-rw|-bind] [path_folder]
-
-Instruct: /data/overlayfs/tmp/overlayrw -rw /system/app
-
-After running the command, you can edit files in that directory
-```
-
-#### Hide root
-
-+ If you select root, more rw-allowed partitions will appear
-
-+ Hidden root | Root
-
-#### Mount mode
-
-1. Mount Overlay FS
-
-+ Edit the system without saving the file
-
-2. Mount Bind
-
-+ Need to save data from original ROM the first time it will boot longer 
++ Use magisk to flash the module, can use any root manager not just magisk 
 
 #### Partition list
 
@@ -42,4 +18,3 @@ After running the command, you can edit files in that directory
 
 + Some paths, if used, can be detected as root 
 
-+ Add link partitions here: `/data/overlayfs/tmp/path`
