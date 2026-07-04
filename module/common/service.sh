@@ -26,11 +26,11 @@ for vcl in $(cat $MKD/partition.txt | sort | uniq); do
 [ -d "$vcl" ] && overlayrw rw "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
 done
 
-# Anti-bootloop 120s
+# Anti-bootloop 600s
 while true; do
 bodem=$(($bodem + 1))
 [ "$(getprop sys.boot_completed)" == 1 ] && break
-if [ "$bodem" -ge 120 ]; then
+if [ "$bodem" -ge 600 ]; then
 echo > $MKD/disable
 reboot
 fi
