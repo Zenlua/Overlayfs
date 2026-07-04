@@ -8,6 +8,8 @@
 
 + Use magisk to flash the module, can use any root manager not just magisk 
 
++ This should be used when you are using erof partitions
+
 #### Partition list
 
 + `/product/app`, for example, will allow rw to this directory
