@@ -12,6 +12,8 @@
 
 + `/product/app`, for example, will allow rw to this directory
 
++ You can add the path to the partition.txt file within the module.
+
 + For magisk be careful when adding partition it may bootloop
 
 + Note that you should only add partitions with apk, do not add strange partitions that may be bootlooped
