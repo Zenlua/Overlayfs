@@ -2,7 +2,12 @@
 
 + Github: [Zenlua/Overlayfs](https://github.com/Zenlua/Overlayfs)
 
-+ Report: [Telegram](https://t.me/toolmod)
++ Report: [Telegram](https://t.me/tooltree)
+
+#### V1.5
+
++ Now compatible with more root types
++ Only overlayfs are now being used
 
 #### V1.4
 
