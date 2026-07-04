@@ -8,7 +8,7 @@
 
 + Flash Magisk, KSU, or a similar app to use.
 
-+ If you are using erof partitions, you should use this module.
++ If you are using `erofs` partitions, you should use this module.
 
 #### Partition list
 
