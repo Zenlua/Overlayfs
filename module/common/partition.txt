@@ -18,5 +18,4 @@
 /system/vendor/etc
 /system/vendor/odm/etc
 /system/vendor/odm/app
-/system/vendor/odm/priv-app
 /system/vendor/overlay
