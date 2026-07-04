@@ -15,11 +15,8 @@
 /system/system_ext/framework
 /system/system_ext/priv-app
 /system/vendor/app
-/system/vendor/data-app
 /system/vendor/etc
 /system/vendor/odm/etc
 /system/vendor/odm/app
-/system/vendor/odm/overlay
 /system/vendor/odm/priv-app
-/system/vendor/odm/framework
 /system/vendor/overlay
