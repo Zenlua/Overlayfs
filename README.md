@@ -12,7 +12,7 @@
 
 + `/product/app`, for example, will allow rw to this directory
 
-+ You can add the path to the partition.txt file within the module.
++ You can easily add the partition path yourself to the partition.txt file
 
 + For magisk be careful when adding partition it may bootloop
 
