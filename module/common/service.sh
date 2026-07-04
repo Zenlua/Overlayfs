@@ -20,12 +20,6 @@ elif [ "$1" == "rw" ];then
 fi
 }
 
-# Run code
-[ -f $MKD/log.txt ] && rm -fr $MKD/log.txt
-for vcl in $(cat $MKD/partition.txt | sort | uniq); do
-[ -d "$vcl" ] && overlayrw rw "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
-done
-
 # Anti-bootloop 600s
 while true; do
 bodem=$(($bodem + 1))
@@ -35,6 +29,12 @@ echo > $MKD/disable
 reboot
 fi
 sleep 1
+done
+
+# Run code
+[ -f $MKD/log.txt ] && rm -fr $MKD/log.txt
+for vcl in $(cat $MKD/partition.txt | sort | uniq); do
+[ -d "$vcl" ] && overlayrw rw "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
 done
 
 # log overlay
