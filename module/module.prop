@@ -3,5 +3,5 @@ name=Overlayfs RW
 author=Kakathic
 description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel
 version=1.5
-versionCode=150
+versionCode=151
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
