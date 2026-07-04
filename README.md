@@ -6,9 +6,9 @@
 
 + Report: [Telegram](https://t.me/toolmod)
 
-+ Use magisk to flash the module, can use any root manager not just magisk 
++ Flash Magisk, KSU, or a similar app to use.
 
-+ This should be used when you are using erof partitions
++ If you are using erof partitions, you should use this module.
 
 #### Partition list
 
@@ -18,4 +18,4 @@
 
 + For magisk be careful when adding partition it may bootloop
 
-+ Note that you should only add partitions with apk, do not add strange partitions that may be bootlooped
++ Note that you should only add partitions with apk, do not add strange partitions that may be bootloop.
