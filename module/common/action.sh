@@ -35,4 +35,5 @@ for vcl in $(cat $MKD/partition.txt | sort | uniq); do
 done
 fi
 
+sleep 1
 exit 0
