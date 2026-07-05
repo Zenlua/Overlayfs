@@ -1,7 +1,7 @@
 id=overlayfs
 name=Overlayfs RW
 author=Kakathic
-description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel
+description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel, Press the action button to change the rw/ro status.
 version=1.5
 versionCode=152
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlay.json
