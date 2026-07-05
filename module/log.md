@@ -9,6 +9,7 @@
 + Add a toggle switch for RW and RO states to avoid root detection
 + Now compatible with more root types
 + Only overlayfs are now being used
++ Anti-bootloop 600s 
 
 #### V1.4
 
