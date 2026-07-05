@@ -6,6 +6,7 @@
 
 #### V1.5
 
++ Add a toggle switch for RW and RO states to avoid root detection
 + Now compatible with more root types
 + Only overlayfs are now being used
 
