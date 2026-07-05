@@ -4,8 +4,6 @@
 
 + Update: [Release](https://github.com/Zenlua/Overlayfs/releases) | [Changelog](./module/log.md)
 
-+ Report: [Telegram](https://t.me/toolmod)
-
 + Flash Magisk, KSU, or a similar app to use.
 
 + If you are using `erofs` partitions, you should use this module.
