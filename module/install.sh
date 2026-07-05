@@ -27,6 +27,7 @@ sleep 0.01
 done
 # Create partition
 cp -rf $TMPDIR/partition.txt $MODPATH
+cp -rf $TMPDIR/action.sh $MODPATH
 ui_print " "
 }
 
