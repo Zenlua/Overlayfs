@@ -10,6 +10,10 @@
 
 + If you are using `erofs` partitions, you should use this module.
 
++ The advice is to only enable rw mode when necessary to modify files. After making changes, switch back to ro mode to avoid system detection of root access.
+
++ The default state upon installation is rw. Press the action button to change the state. When you change it, it will save the state. Upon restarting, all changes will take effect, and the old state will remain.
+
 #### Partition list
 
 + `/product/app`, for example, will allow rw to this directory
