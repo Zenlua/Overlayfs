@@ -14,7 +14,7 @@ if [ -e "$2" ];then
     chown $(busybox ls -nZld "$2" | awk '{print $3":"$4}') "$MKD$2"
 fi
 if [ "$1" == "ro" ];then
-    mount -t overlay Kakathic -o "lowerdir=$MODP$2:$2" "$2" && echo "Mount RO: $2 done"
+    mount -t overlay Kakathic -o "lowerdir=$MKD$2:$2" "$2" && echo "Mount RO: $2 done"
 elif [ "$1" == "rw" ];then
     mount -t overlay Kakathic -o "upperdir=$MKD$2,lowerdir=$2,workdir=$MKD/tmp$2" "$2" && echo "Mount RW: $2 done"
 fi
@@ -33,9 +33,13 @@ done
 
 # Run code
 [ -f $MKD/log.txt ] && rm -fr $MKD/log.txt
+grep -q 'checkrw=' $MKD/module.prop || echo 'checkrw=1' >> $MKD/module.prop
+
+if grep -q 'checkrw=1' $MKD/module.prop; then
 for vcl in $(cat $MKD/partition.txt | sort | uniq); do
 [ -d "$vcl" ] && overlayrw rw "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
 done
+fi
 
 # log overlay
 mount -t overlay > $MKD/overlay.txt
