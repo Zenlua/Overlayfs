@@ -5,7 +5,7 @@
 MKD="${0%/*}"
 
 overlayrw(){
-if [ -e "$2" ];then
+if [ -e "$2" ]; then
     mkdir -p "$MKD$2"
     [ "$1" == "rw" ] && mkdir -p "$MKD/tmp$2"
     busybox setfattr -n trusted.overlay.opaque -v y $MKD$2 2>/dev/null
@@ -13,9 +13,9 @@ if [ -e "$2" ];then
     chmod 755 "$MKD$2"
     chown $(busybox ls -nZld "$2" | awk '{print $3":"$4}') "$MKD$2"
 fi
-if [ "$1" == "ro" ];then
+if [ "$1" == "ro" ]; then
     mount -t overlay Kakathic -o "lowerdir=$MKD$2:$2" "$2" && echo "Mount RO: $2 done"
-elif [ "$1" == "rw" ];then
+elif [ "$1" == "rw" ]; then
     mount -t overlay Kakathic -o "upperdir=$MKD$2,lowerdir=$2,workdir=$MKD/tmp$2" "$2" && echo "Mount RW: $2 done"
 fi
 }
