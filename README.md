@@ -14,6 +14,32 @@
 
 #### Partition list
 
++ List of folders that have been RW
+
+```
+/system/app
+/system/etc
+/system/fonts
+/system/framework
+/system/media
+/system/priv-app
+/system/product/app
+/system/product/etc
+/system/product/fonts
+/system/product/overlay
+/system/product/priv-app
+/system/system_ext/app
+/system/system_ext/cust
+/system/system_ext/etc
+/system/system_ext/framework
+/system/system_ext/priv-app
+/system/vendor/app
+/system/vendor/etc
+/system/vendor/odm/etc
+/system/vendor/odm/app
+/system/vendor/overlay
+```
+
 + `/product/app`, for example, will allow rw to this directory
 
 + You can easily add the partition path yourself to the partition.txt file
