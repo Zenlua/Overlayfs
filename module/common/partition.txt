@@ -7,6 +7,7 @@
 /system/product/app
 /system/product/etc
 /system/product/fonts
+/system/product/framework
 /system/product/overlay
 /system/product/priv-app
 /system/system_ext/app
