@@ -21,7 +21,7 @@ ui_print " "
 # Bắt đầu cài đặt
 on_install() {
 
-ui_print "Start checking the overlay..."
+ui_print "  Start checking the overlay..."
 ui_print " "
 
 # test mount
@@ -31,11 +31,11 @@ touch /system/app/kakathic
 
 # check
 if [ -f /system/app/kakathic ]; then
-    ui_print "Success"
+    ui_print "  Success"
     rm /system/app/kakathic
 else
     umount -l /system/app 2>/dev/null
-    abort "Mount overlay failed, your device cannot use this module."
+    abort "  Mount overlay failed, your device cannot use this module."
 fi
 
 # umount
