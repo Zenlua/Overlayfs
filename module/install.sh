@@ -49,8 +49,10 @@ ui_print "  Overlayfs: $vc"
 sleep 0.01
 done
 # Create partition
-cp -rf $TMPDIR/partition.txt $MODPATH
 cp -rf $TMPDIR/action.sh $MODPATH
+if [ ! -f /data/adb/modules/overlayfs/partition.txt ]; then
+cp -rf $TMPDIR/partition.txt $MODPATH
+fi
 ui_print " "
 }
 
