@@ -20,9 +20,32 @@ ui_print " "
 
 # Bắt đầu cài đặt
 on_install() {
+
+ui_print "Start checking the overlay..."
+ui_print " "
+
+# test mount
+mkdir -p $MODPATH/system/app $MODPATH/tmp/system/app
+mount -t overlay Kakathic -o "upperdir=$MODPATH/system/app,lowerdir=/system/app,workdir=$MODPATH/tmp/system/app" "/system/app"
+touch /system/app/kakathic
+
+# check
+if [ -f /system/app/kakathic ]; then
+    ui_print "Success"
+    rm /system/app/kakathic
+else
+    umount -l /system/app 2>/dev/null
+    abort "Mount overlay failed, your device cannot use this module."
+fi
+
+# umount
+umount -l /system/app 2>/dev/null
+rm -fr $MODPATH/system $MODPATH/tmp
+ui_print " "
+
 # list partition
 for vc in $(cat "$TMPDIR/partition.txt"); do
-echo "  Overlayfs: $vc"
+ui_print "  Overlayfs: $vc"
 sleep 0.01
 done
 # Create partition
