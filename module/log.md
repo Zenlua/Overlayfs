@@ -7,6 +7,7 @@
 #### V1.6
 
 + Fix KSU mount error
++ Keep the old partition.txt file if it exists
 
 #### V1.5
 
