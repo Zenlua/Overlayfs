@@ -4,6 +4,10 @@
 
 + Report: [Telegram](https://t.me/tooltree)
 
+#### V1.6
+
++ Fix KSU mount error
+
 #### V1.5
 
 + Add a toggle switch for RW and RO states to avoid root detection
