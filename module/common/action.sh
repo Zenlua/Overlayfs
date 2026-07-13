@@ -43,7 +43,7 @@ fi
 
 # Tạo log overlay
 mount_ov="$(mount -t overlay)"
-[ -z "$mount_ov" ] && echo "$mount_ov" > $MKD/overlay.txt
+[ -z "$mount_ov" ] || echo "$mount_ov" > $MKD/overlay.txt
 
 # End sleep delay 1s, fix bug ksu
 sleep 1
