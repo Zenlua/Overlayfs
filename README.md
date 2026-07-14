@@ -20,6 +20,7 @@
 
 - System hidden root feature
 - The default setting is mount overlay, with 4GB of storage.
+- With mount bind mode, the total file size is included plus 5GB of free space. 
 - Mount bind mode is only enabled when:
 > + Mount overlay mode is not working.
 > + To enable mount bind, create a file at the following path: `/data/adb/overlayfs/bind` ©
