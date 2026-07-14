@@ -7,6 +7,7 @@
 #### V1.6.6
 
 + Fix bug logic backup
++ [Hidden root version](https://github.com/Zenlua/Nverlayfs/releases)
 
 #### V1.6
 
