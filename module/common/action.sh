@@ -21,6 +21,13 @@ elif [ "$1" == "rw" ]; then
 fi
 }
 
+# Ngăn cản khi chưa khởi động lại
+if ! grep -q 'checkrw=' $MKD/module.prop; then
+    echo "Restart your device to use this feature !"
+    sleep 2
+    exit
+fi
+
 # run code
 if grep -q 'checkrw=1' $MKD/module.prop; then
     text_ro="Current status: RO 💤, currently unable to edit files, old files remain unchanged."
@@ -41,7 +48,6 @@ else
     done
 fi
 
-# Tạo log overlay
 # Tạo log overlay
 mount_ov="$(mount -t overlay)"
 if [ "$mount_ov" ]; then
