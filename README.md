@@ -8,7 +8,7 @@ An Android module designed to mount **OverlayFS** with Read/Write (RW) permissio
 
 ## 📌 Quick Links
 
-*   🚀 **Update:** [Release](https://github.com/Zenlua/Nverlayfs/releases) | [Changelog](./module/log.md)
+*   🚀 **Update:** [Release](https://github.com/Zenlua/Overlayfs/releases) | [Changelog](./module/log.md)
 *   ⚡ **Requirements:** Flash Magisk, KernelSU (KSU), or a similar manager app to use.
 *   💡 **Recommendation:** If you are currently using `erofs` partitions, you should highly consider using this module.
 
