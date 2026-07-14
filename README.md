@@ -13,6 +13,7 @@
 1. Basic version
 
 - There is no root hiding feature.
+- You can switch to root to hide root.
 - There's only mount overlay, no mount bind.
 - It can be edited directly in `/data/adb/overlayfs`
 - Storage capacity, in terms of memory `/data`
