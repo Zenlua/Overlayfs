@@ -34,6 +34,7 @@ An Android module designed to mount **OverlayFS** with Read/Write (RW) permissio
     *   To manually enable mount bind, create a file at the following path: `/data/adb/overlayfs/bind` ©
 *   **Custom RW Partitions:** Modify the list of partitions that are rw in: `/data/adb/overlayfs/partition.txt` ©
 *   **Add Prop:** Add custom properties configuration at: `/data/adb/overlayfs/system.prop`
+*   **Independence:** It operates completely independently and does not require installing Meta Module (with KSU).
 
 > ⚠️ **Note:** All features marked with the **©** symbol require flashing the `module.zip` file to function properly.
 
