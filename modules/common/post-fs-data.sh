@@ -51,6 +51,9 @@ if [ -f $HOVELAY/versionos ]; then
     fi
 fi
 
+# copy
+[ -f $HOVELAY/system.prop ] && cp -rf $HOVELAY/system.prop $MKD
+
 # mount rw ext4
 if [ -f "$yunly" ]; then
     mkdir -p "$MKS"
