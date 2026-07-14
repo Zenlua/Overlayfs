@@ -4,6 +4,10 @@
 
 + Report: [Telegram](https://t.me/tooltree)
 
+#### V1.6.6
+
++ Fix bug logic backup
+
 #### V1.6
 
 + Fix KSU mount error
