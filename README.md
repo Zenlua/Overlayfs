@@ -25,11 +25,11 @@
 > + Mount overlay mode is not working.
 > + To enable mount bind, create a file at the following path: `/data/adb/overlayfs/bind` ©
 - Modify the list of partitions that are rw in: `/data/adb/overlayfs/partition.txt` ©
-- Add the prop to: `/data/adb/overlayfs/system.prop`
+- Add prop: `/data/adb/overlayfs/system.prop`
 - All features marked with the © symbol require flashing the module.zip file to function.
 - If you encounter errors, you can mount overlayfs.img to edit or delete the file in TWRP or Fox.
 > + In the terminal screen in recovery mode, type the command: `/data/adb/overlayfs/mount.sh`
-> + After typing the command, the overlay directory will appear at: `/data/adb/overlayfs/overlay`, where you can edit the files.
+> + After typing the command, the overlay directory will appear: `/data/adb/overlayfs/overlay`, where you can edit the files.
 
 #### Partition list
 
