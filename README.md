@@ -1,18 +1,16 @@
 # OverlayFS RW
 
-[![Build module](https://github.com/Zenlua/Nverlayfs/actions/workflows/build.yml/badge.svg)](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml)
+<p align="center">
+  <a href="https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml"><img src="https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml/badge.svg" alt="Build module"></a> <a href="https://github.com/Zenlua/Overlayfs/releases"><img src="https://img.shields.io/github/v/release/Zenlua/Overlayfs?color=blue&logo=github" alt="Latest Release"></a>
+</p>
 
 An Android module designed to mount **OverlayFS** with Read/Write (RW) permissions. This is an optimized and essential solution for devices utilizing the **`erofs`** partition format.
-
----
 
 ## 📌 Quick Links
 
 *   🚀 **Update:** [Release](https://github.com/Zenlua/Nverlayfs/releases) | [Changelog](./module/log.md)
 *   ⚡ **Requirements:** Flash Magisk, KernelSU (KSU), or a similar manager app to use.
 *   💡 **Recommendation:** If you are currently using `erofs` partitions, you should highly consider using this module.
-
----
 
 ## 🛠 Version Comparison
 
@@ -38,8 +36,6 @@ An Android module designed to mount **OverlayFS** with Read/Write (RW) permissio
 *   **Add Prop:** Add custom properties configuration at: `/data/adb/overlayfs/system.prop`
 
 > ⚠️ **Note:** All features marked with the **©** symbol require flashing the `module.zip` file to function properly.
-
----
 
 ## 🚑 Troubleshooting & Recovery
 
