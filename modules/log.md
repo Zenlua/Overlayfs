@@ -4,49 +4,7 @@
 
 + Report: [Telegram](https://t.me/tooltree)
 
-#### V1.6
+#### V1.6.6
 
-+ Fix KSU mount error
-
-#### V1.5
-
-+ Add a toggle switch for RW and RO states to avoid root detection
-+ Now compatible with more root types
-+ Only overlayfs are now being used
-+ Anti-bootloop 600s
-+ Fixed
-
-#### V1.4
-
-+ Use volume key to select
-+ Added mount bind option
-+ Add hidden root feature
-+ Create a link from data/overlayfs in adb/modules/overlayfs
-
-#### V1.3
-
-+ Move home to /data/overlayfs
-+ Remove the backup feature because from this version only deleting the module will cause data loss, updates will remain the same
-+ Fix some inactivity errors
-+ Note that from 1.2 to 1.3 there will be no backup, please switch manually.
-
-#### V1.2
-
-+ Added bootloop drum feature, waiting time 2 minutes 120 seconds, Timeout automatically turns off the overlayfs module
-+ Added auto mode again
-+ Command: `overlayrw [path_folder_rw]`
-+ For example: overlayrw /system/app
-+ Will rw the entire /system/app directory
-+ Fully updated to support more magisks
-+ Default backup option on
-+ Remove rw option in module.prop
-+ Added early or late start feature
-
-#### V1.1
-
-+ Fix bootloop
-+ Update some more partitions
-
-#### V1.0
-
++ Hidden root feature
 + First version
