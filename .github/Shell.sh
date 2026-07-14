@@ -22,3 +22,21 @@ echo '
 "changelog": "https://raw.githubusercontent.com/Zenlua/Overlayfs/main/module/log.md"
 }
 ' > $TOME/tmp2/overlay.json
+
+# modul 2
+cd $TOME/modules
+
+zip -r $TOME/Up/$(getmodun id)_$(getmodun version)_hide_root.zip *
+VER="V$(getmodun version)"
+VUR="$(getmodun version)"
+VSR="$(getmodun versionCode)"
+VIR="$(getmodun id)"
+
+echo '
+{
+"version": "'$VUR'",
+"versionCode": "'$VSR'",
+"zipUrl": "https://github.com/Zenlua/Overlayfs/releases/download/'$VER'/'${VIR}_${VUR}'_hide_root.zip",
+"changelog": "https://raw.githubusercontent.com/Zenlua/Overlayfs/main/modules/log.md"
+}
+' > $TOME/tmp2/overlayfs.json
