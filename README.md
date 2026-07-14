@@ -21,7 +21,7 @@ An Android module designed to mount **OverlayFS** with Read/Write (RW) permissio
 *   **Mount Mechanism:** Supports **Mount Overlay** only; Mount Bind is not available.
 *   **Configuration:** It can be edited directly at the following path:
     ```path
-    /data/adb/overlayfs
+    /data/adb/modules/overlayfs
     ```
 *   **Storage Capacity:** Dynamically scales in terms of memory available on your `/data` partition.
 
