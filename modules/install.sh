@@ -138,12 +138,7 @@ else
 fi
 
 # copy system.prop
-if [ -f $HOVELAY/system.prop ]; then
-    cp -rf $HOVELAY/system.prop $MODPATH
-else
-    cp -rf $TMPDIR/system.prop $HOVELAY
-    cp -rf $HOVELAY/system.prop $MODPATH
-fi
+[ -f $HOVELAY/system.prop ] || cp -rf $TMPDIR/system.prop $HOVELAY
 
 # Create partition
 cp -rf $TMPDIR/action.sh $MODPATH
