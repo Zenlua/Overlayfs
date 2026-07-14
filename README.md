@@ -1,68 +1,56 @@
 # OverlayFS RW
 
-[![Build module](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml/badge.svg)](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml)
+[![Build module](https://github.com/Zenlua/Nverlayfs/actions/workflows/build.yml/badge.svg)](https://github.com/Zenlua/Overlayfs/actions/workflows/build.yml)
 
-+ Update: [Release](https://github.com/Zenlua/Overlayfs/releases) | [Changelog](./module/log.md)
+An Android module designed to mount **OverlayFS** with Read/Write (RW) permissions. This is an optimized and essential solution for devices utilizing the **`erofs`** partition format.
 
-+ Flash Magisk, KSU, or a similar app to use.
+---
 
-+ If you are using `erofs` partitions, you should use this module.
+## 📌 Quick Links
 
-#### Basic version
+*   🚀 **Update:** [Release](https://github.com/Zenlua/Nverlayfs/releases) | [Changelog](./module/log.md)
+*   ⚡ **Requirements:** Flash Magisk, KernelSU (KSU), or a similar manager app to use.
+*   💡 **Recommendation:** If you are currently using `erofs` partitions, you should highly consider using this module.
 
-- There is no root hiding feature.
-- You can switch to root to hide root.
-- There's only mount overlay, no mount bind.
-- It can be edited directly in `/data/adb/overlayfs`
-- Storage capacity, in terms of memory `/data`
+---
 
-#### Hidden root version
+## 🛠 Version Comparison
 
-- System hidden root feature
-- The default setting is mount overlay, with 4GB of storage.
-- With mount bind mode, the total file size is included plus 5GB of free space. 
-- Mount bind mode is only enabled when:
-> + Mount overlay mode is not working.
-> + To enable mount bind, create a file at the following path: `/data/adb/overlayfs/bind` ©
-- Modify the list of partitions that are rw in: `/data/adb/overlayfs/partition.txt` ©
-- Add prop: `/data/adb/overlayfs/system.prop`
-- All features marked with the © symbol require flashing the module.zip file to function.
-- If you encounter errors, you can mount overlayfs.img to edit or delete the file in TWRP or Fox.
-> + In the terminal screen in recovery mode, type the command: `/data/adb/overlayfs/mount.sh`
-> + After typing the command, the overlay directory will appear: `/data/adb/overlayfs/overlay`, where you can edit the files.
+### 1. Basic Version
 
-#### Partition list
+*   **Root Hiding:** There is no built-in root hiding feature.
+*   **Switching:** You can manually switch to root to hide root.
+*   **Mount Mechanism:** Supports **Mount Overlay** only; Mount Bind is not available.
+*   **Configuration:** It can be edited directly at the following path:
+    ```path
+    /data/adb/overlayfs
+    ```
+*   **Storage Capacity:** Dynamically scales in terms of memory available on your `/data` partition.
 
-+ List of folders that have been RW
+### 2. Hidden Root Version
 
-```
-/system/app
-/system/etc
-/system/fonts
-/system/framework
-/system/media
-/system/priv-app
-/system/product/app
-/system/product/etc
-/system/product/fonts
-/system/product/overlay
-/system/product/priv-app
-/system/system_ext/app
-/system/system_ext/cust
-/system/system_ext/etc
-/system/system_ext/framework
-/system/system_ext/priv-app
-/system/vendor/app
-/system/vendor/etc
-/system/vendor/odm/etc
-/system/vendor/odm/app
-/system/vendor/overlay
-```
+*   **Root Hiding:** Features a built-in system hidden root capability.
+*   **Default Mode:** The default setting is configured to Mount Overlay with a fixed **4GB** storage size.
+*   **Mount Bind Mode:** The total actual file size is included plus **5GB** of free space. Mount bind mode is only enabled when:
+    *   Mount overlay mode is not working properly on the device.
+    *   To manually enable mount bind, create a file at the following path: `/data/adb/overlayfs/bind` ©
+*   **Custom RW Partitions:** Modify the list of partitions that are rw in: `/data/adb/overlayfs/partition.txt` ©
+*   **Add Prop:** Add custom properties configuration at: `/data/adb/overlayfs/system.prop`
 
-+ `/product/app`, for example, will allow rw to this directory
+> ⚠️ **Note:** All features marked with the **©** symbol require flashing the `module.zip` file to function properly.
 
-+ You can easily add the partition path yourself to the partition.txt file
+---
 
-+ For magisk be careful when adding partition it may bootloop
+## 🚑 Troubleshooting & Recovery
 
-+ Note that you should only add partitions with apk, do not add strange partitions that may be bootloop.
+If you encounter errors (such as a bootloop or freeze), you can mount `overlayfs.img` to edit or delete the problematic files directly within **TWRP** or **OrangeFox Recovery**:
+
+1. In the terminal screen of your recovery mode, type and execute the command:
+    ```bash
+    /data/adb/overlayfs/mount.sh
+    ```
+2. After typing the command, the overlay directory will appear at:
+    ```path
+    /data/adb/overlayfs/overlay
+    ```
+    where you can edit the files.
