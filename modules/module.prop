@@ -1,7 +1,7 @@
 id=overlayfs
 name=Overlayfs RW hide root
 author=Kakathic
-description=Module allows some directories to be read and write (rw), via overlayfs available in the kernel, Press the action button to change the rw/ro status.
-version=1.6.0
-versionCode=160
+description=The module allows reading and writing to certain directories RW via overlays or --bind. Press the action button to change the RW/RO state (only available in overlay mode).
+version=1.6.6
+versionCode=166
 updateJson=https://github.com/Zenlua/Overlayfs/releases/download/tmp/overlayfs.json
