@@ -57,6 +57,7 @@ rm -fr $MODPATH/system $MODPATH/tmp
 ui_print " "
 
 # Sao chép list
+mkdir -p "$HOVELAY"
 [ -f "$HOVELAY/partition.txt" ] || cp -rf $TMPDIR/partition.txt "$HOVELAY"
 
 # tính toán kích cỡ
@@ -76,7 +77,6 @@ fi
 # tính năng tạo img ext4
 Taoext4(){
 ui_print "  Created: ext4"
-mkdir -p "$HOVELAY"
 if ! fallocate -l "${size_mb}M" "$1" 2>/dev/null; then
     truncate -s "${size_mb}M" "$1" || abort "  Overlayfs.img creation failed."
 fi
