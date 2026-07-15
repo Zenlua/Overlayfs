@@ -4,7 +4,7 @@
 
 + Report: [Telegram](https://t.me/tooltree)
 
-#### V1.6.6
+#### V1.6.7
 
 + Hidden root feature
 + First version
