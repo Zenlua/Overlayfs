@@ -28,23 +28,22 @@ ui_print "  Start checking the overlay..."
 ui_print " "
 
 # tạo thư mục mount
-mkdir -p $MODPATH/system/app $MODPATH/tmp/system/app
+#mkdir -p $MODPATH/system/app $MODPATH/tmp/system/app
 
 # test mount
-mount -t overlay Kakathic -o "upperdir=$MODPATH/system/app,lowerdir=/system/app,workdir=$MODPATH/tmp/system/app" "/system/app"
-touch /system/app/kakathic
+#mount -t overlay Kakathic -o "upperdir=$MODPATH/system/app,lowerdir=/system/app,workdir=$MODPATH/tmp/system/app" "/system/app"
+#touch /system/app/kakathic
 
 # check
-if [ -f /system/app/kakathic ]; then
+if  grep -q "overlay" /proc/filesystems; then
     ui_print "  Success"
-    rm /system/app/kakathic
 else
     abort "  Mount overlay failed, your device cannot use this module."
 fi
 
 # umount
-umount -l /system/app 2>/dev/null
-rm -fr $MODPATH/system $MODPATH/tmp
+#umount -l /system/app 2>/dev/null
+#rm -fr $MODPATH/system $MODPATH/tmp
 ui_print " "
 
 # Create partition
