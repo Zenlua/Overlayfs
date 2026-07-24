@@ -28,32 +28,24 @@ ui_print "  Start checking the overlay, bind..."
 ui_print " "
 
 # tạo thư mục test
-mkdir -p $MODPATH/system/app $MODPATH/tmp/system/app $MODPATH/system/xbin
-
-# overlay
-if [ ! -f $HOVELAY/bind ]; then
-    mount -t overlay Kakathic -o "upperdir=$MODPATH/system/app,lowerdir=/system/app,workdir=$MODPATH/tmp/system/app" "/system/app"
-    touch /system/app/kakathic
-fi
+mkdir -p $MODPATH/system/app $MODPATH/system/xbin
 
 # check
-if [ -f /system/app/kakathic ]; then
+if  [ "$(grep -cm1 "overlay" /proc/filesystems)" == 1 ] && [ ! -f $HOVELAY/bind ]; then
     ui_print "  Success: overlay"
     echo overlay >$MODPATH/type
 else
     mount --bind $MODPATH/system/app /system/app
     touch /system/app/kakathic
     if [ -f /system/app/kakathic ]; then
+    umount -l /system/app 2>/dev/null
+    rm -fr $MODPATH/system
     ui_print "  Success: bind"
     echo bind >$MODPATH/type
     else
     abort "  Mount overlay, bind failed, your device cannot use this module."
     fi
 fi
-
-# umount
-umount -l /system/app 2>/dev/null
-rm -fr $MODPATH/system $MODPATH/tmp
 ui_print " "
 
 # Sao chép list
