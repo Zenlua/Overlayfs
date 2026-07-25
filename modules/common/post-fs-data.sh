@@ -96,12 +96,17 @@ fi
 
 # Tạo log overlay, bind
 if [ "$(cat $MKD/type)" == "bind" ]; then
-mount_ov="$(mount | grep "$MKS")"
-if [ "$mount_ov" ]; then
+    mount_ov="$(mount | grep "$MKS")"
+    if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/bind.txt
     mount | grep "$(echo "$mount_ov" | awk '{print $1}')" >> $MKD/bind.txt
-fi
+    fi
 else
-mount_ov="$(mount -t overlay)"
-[ -z "$mount_ov" ] || echo "$mount_ov" > $MKD/overlay.txt
+    mount_ov="$(mount -t overlay)"
+    if [ "$mount_ov" ]; then
+    echo "$mount_ov" > $MKD/overlay. grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
+    else
+    set_mdul description "Current status: RO 🛑"
+    rm -f $MKD/overlay.txt
+    fi
 fi
