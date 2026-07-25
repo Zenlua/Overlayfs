@@ -62,7 +62,10 @@ fi
 mount_ov="$(mount -t overlay)"
 if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/overlay.txt
-    rm $MKD/overlay.txt
+    grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
+else
+    set_mdul description "Current status: RO 🛑"
+    rm -f $MKD/overlay.txt
 fi
 
 # End sleep delay 1s, fix bug ksu
