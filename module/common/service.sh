@@ -40,4 +40,11 @@ fi
 
 # Tạo log overlay
 mount_ov="$(mount -t overlay)"
-[ -z "$mount_ov" ] || echo "$mount_ov" > $MKD/overlay.txt
+
+if [ "$mount_ov" ]; then
+    echo "$mount_ov" > $MKD/overlay.txt
+    grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
+else
+    set_mdul description "Current status: RO 🛑"
+    rm -f $MKD/overlay.txt
+fi
