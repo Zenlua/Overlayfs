@@ -104,7 +104,8 @@ if [ "$(cat $MKD/type)" == "bind" ]; then
 else
     mount_ov="$(mount -t overlay)"
     if [ "$mount_ov" ]; then
-    echo "$mount_ov" > $MKD/overlay. grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
+    echo "$mount_ov" > $MKD/overlay.txt
+    grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
     else
     set_mdul description "Current status: RO 🛑"
     rm -f $MKD/overlay.txt
