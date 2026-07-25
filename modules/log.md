@@ -4,6 +4,10 @@
 
 + Report: [Telegram](https://t.me/tooltree)
 
+#### V1.6.9
+
++ Add check overlay
+
 #### V1.6.8
 
 + Fix check overlay
