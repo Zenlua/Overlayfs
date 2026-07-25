@@ -6,6 +6,7 @@
 
 #### V1.6.8
 
++ Add check overlay
 + Fix check overlay 
 
 #### V1.6.6
