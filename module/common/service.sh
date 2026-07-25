@@ -37,7 +37,6 @@ if grep -q 'checkrw=1' $MKD/module.prop; then
 fi
 
 # Tạo log overlay
-# Tạo log overlay
 mount_ov="$(mount -t overlay)"
 if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/overlay.txt
