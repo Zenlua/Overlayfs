@@ -38,7 +38,4 @@ fi
 
 # Tạo log overlay
 mount_ov="$(mount -t overlay)"
-if [ "$mount_ov" ]; then
-    echo "$mount_ov" > $MKD/overlay.txt
-    rm $MKD/overlay.txt
-fi
+[ -z "$mount_ov" ] || echo "$mount_ov" > $MKD/overlay.txt
