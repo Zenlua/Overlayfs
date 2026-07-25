@@ -4,6 +4,8 @@
 MKD="${0%/*}"
 
 # Tính năng
+set_mdul(){ sed -i "/^$1=/c $1=$2" $MKD/module.prop; }
+
 overlayfs(){
 if [ "$1" == "ro" ]; then
     mount -t overlay Kakathic -o "lowerdir=$MKD$2:$2" "$2" && echo "Mount RO: $2 done"
