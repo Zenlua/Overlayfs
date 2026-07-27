@@ -1,7 +1,7 @@
 # Kakathic
 
 # Để true để bỏ qua Mount system
-SKIPMOUNT=false
+SKIPMOUNT=true
 # Để true nó sẽ kết hợp system.prop vào build.prop
 PROPFILE=false
 # Để true post-fs-data.sh được sử dụng
