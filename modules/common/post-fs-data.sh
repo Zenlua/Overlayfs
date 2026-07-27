@@ -79,15 +79,25 @@ fi
 # Run code
 if [ -f "$HOVELAY/partition.txt" ]; then
     if [ "$(cat $MKD/type)" == "bind" ]; then
-    for vcl in $(cat "$HOVELAY/partition.txt" | sort | uniq); do
-    [ -d "$vcl" ] && overlayfs bind "$vcl" >> "$MKD/log.txt" 2>&1
-    done
-    set_mdul description "Current state: RW 📝, mount --bind mode, cannot switch to another state."
+        for vcl in $(cat "$HOVELAY/partition.txt" | sort | uniq); do
+        [ -d "$vcl" ] && overlayfs bind "$vcl" >> "$MKD/log.txt" 2>&1
+        done
+        set_mdul description "Current state: RW 📝, mount --bind mode, cannot switch to another state."
     else
-    for vcl in $(cat "$HOVELAY/partition.txt" | sort | uniq); do
-    [ -d "$vcl" ] && overlayfs $checkrw "$vcl" >> "$MKD/log.txt" 2>&1
-    done
-    set_mdul description "Current status: RW 📝, file editable. After editing, restart to apply system changes."
+        for vcl in $(cat "$HOVELAY/partition.txt" | sort | uniq); do
+        [ -d "$vcl" ] && overlayfs $checkrw "$vcl" >> "$MKD/log.txt" 2>&1
+        done
+        set_mdul description "Current status: RW 📝, file editable. After editing, restart to apply system changes."
+        error_rw="Error: This device does not support overlay RW 🛑"
+        # Tạo log overlay
+        mount_ov="$(mount -t overlay)"
+        if [ "$mount_ov" ]; then
+        echo "$mount_ov" > $MKD/overlay.txt
+        grep -q Kakathic $MKD/overlay.txt || set_mdul description "$error_rw"
+        else
+        set_mdul description "$error_rw"
+        rm -f $MKD/overlay.txt
+        fi
     fi
 else
     echo "List not found: partition.txt" > "$MKD/log.txt"
@@ -100,14 +110,5 @@ if [ "$(cat $MKD/type)" == "bind" ]; then
     if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/bind.txt
     mount | grep "$(echo "$mount_ov" | awk '{print $1}')" >> $MKD/bind.txt
-    fi
-else
-    mount_ov="$(mount -t overlay)"
-    if [ "$mount_ov" ]; then
-    echo "$mount_ov" > $MKD/overlay.txt
-    grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
-    else
-    set_mdul description "Current status: RO 🛑"
-    rm -f $MKD/overlay.txt
     fi
 fi
