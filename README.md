@@ -30,7 +30,7 @@ An Android module designed to mount **OverlayFS** with Read/Write (RW) permissio
 
 *   **Root Hiding:** Features a built-in system hidden root capability.
 *   **Default Mode:** The default setting is configured to Mount Overlay with a fixed **4GB** storage size.
-*   **Mount Bind Mode:** The total actual file size is included plus **5GB** of free space. Mount bind mode is only enabled when:
+*   **Mount Bind Mode:** The total actual file size is included plus **4GB** of free space. Mount bind mode is only enabled when:
     *   Mount overlay mode is not working properly on the device.
     *   To manually enable mount bind, create a file at the following path: `/data/adb/overlayfs/bind` ©
 *   **Custom RW Partitions:** Modify the list of partitions that are rw in: `/data/adb/overlayfs/partition.txt` ©
