@@ -42,25 +42,22 @@ if grep -q 'checkrw=1' $MKD/module.prop; then
     [ -d "$vcl" ] && overlayfs ro "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
     done
     find $MKD -type d -empty -delete >/dev/null
-else
-    
+else 
     echo "$text_rw"
     set_mdul checkrw 1
     set_mdul description "$text_rw"
     for vcl in $(cat $MKD/partition.txt | sort | uniq); do
     [ -d "$vcl" ] && overlayfs rw "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
     done
-fi
-
-# Tạo log overlay
-mount_ov="$(mount -t overlay)"
-
-if [ "$mount_ov" ]; then
+    # Tạo log overlay
+    mount_ov="$(mount -t overlay)"
+    if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/overlay.txt
     grep -q Kakathic $MKD/overlay.txt || set_mdul description "$error_rw"
-else
+    else
     set_mdul description "$error_rw"
     rm -f $MKD/overlay.txt
+    fi
 fi
 
 # End sleep delay 1s, fix bug ksu
