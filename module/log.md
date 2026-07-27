@@ -6,6 +6,13 @@
 
 #### V1.7.0
 
++ Added a new anti-bootloop mechanism
++ Press the volume + button 5 times: Turn off the current module
++ Press the volume - button 5 times: Turn off all modules
++ Press the power button to turn the flashlight on or off.
++ Light-up effect when pressing the volume button.
++ After pressing any volume button 5 times, the process will restart the device to apply the changes.
+
 + Fix bug V2
 + Remove the possibility of depending on the meta module.
 + Now both modules are no longer dependent on existing mounts. 
