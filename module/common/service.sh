@@ -26,7 +26,6 @@ until [ "$(getprop sys.boot_completed)" = 1 ]; do
     sleep 1
 done
 
-error_rw="Error: This device does not support overlay RW 🛑"
 # Run code
 [ -f $MKD/log.txt ] && rm -fr $MKD/log.txt
 grep -q 'checkrw=' $MKD/module.prop || echo 'checkrw=1' >> $MKD/module.prop
@@ -37,17 +36,18 @@ if grep -q 'checkrw=1' $MKD/module.prop; then
     [ -d "$vcl" ] && overlayfs rw "$vcl" >> "$MKD/log.txt" 2>&1
     done
     # Tạo log overlay
+    error_rw="Error: This device does not support overlay RW 🛑"
     mount_ov="$(mount -t overlay)"
     if [ "$mount_ov" ]; then
-    echo "$mount_ov" > $MKD/overlay.txt
-    if grep -q Kakathic $MKD/overlay.txt; then
-    set_mdul description "Current status: RW 📝, file editable. After editing, restart to apply system changes."
+        echo "$mount_ov" > $MKD/overlay.txt
+        if grep -q Kakathic $MKD/overlay.txt; then
+            set_mdul description "Current status: RW 📝, file editable. After editing, restart to apply system changes."
+        else
+            set_mdul description "$error_rw"
+        fi
     else
-    set_mdul description "$error_rw"
-    fi
-    else
-    set_mdul description "$error_rw"
-    rm -f $MKD/overlay.txt
+        set_mdul description "$error_rw"
+        rm -f $MKD/overlay.txt
     fi
 fi
 
