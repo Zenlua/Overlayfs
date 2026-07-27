@@ -37,6 +37,6 @@ echo '
 "version": "'$VUR'",
 "versionCode": "'$VSR'",
 "zipUrl": "https://github.com/Zenlua/Overlayfs/releases/download/'$VER'/'${VIR}_${VUR}'_hide_root.zip",
-"changelog": "https://raw.githubusercontent.com/Zenlua/Overlayfs/main/modules/log.md"
+"changelog": "https://raw.githubusercontent.com/Zenlua/Overlayfs/main/module/log.md"
 }
 ' > $TOME/tmp2/overlayfs.json
