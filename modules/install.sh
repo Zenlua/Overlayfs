@@ -28,7 +28,7 @@ ui_print "  Start checking the overlay, bind..."
 ui_print " "
 
 # tạo thư mục test
-mkdir -p $MODPATH/system/app $MODPATH/system/xbin
+mkdir -p $MODPATH/system/app
 
 # check
 if  [ "$(grep -cm1 "overlay" /proc/filesystems)" == 1 ] && [ ! -f $HOVELAY/bind ]; then
@@ -57,7 +57,7 @@ if [ "$(cat $MODPATH/type)" == "bind" ]; then
     ui_print "  Calculating the size needed to create..."
     ui_print " "
     total_mb=$(while read -r dir; do [ -d "$dir" ] && du -sk "$dir"; done < $HOVELAY/partition.txt | awk '{total += $1} END {printf "%d", total / 1024}')
-    size_mb="$((total_mb + 5120))"
+    size_mb="$((total_mb + 4096))"
     ui_print "  Size: $(awk -v t="$total_mb" 'BEGIN {printf "%.2fGB\n", (t / 1024) + 5}')"
     ui_print " "
 else
