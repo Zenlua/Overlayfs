@@ -40,7 +40,11 @@ if grep -q 'checkrw=1' $MKD/module.prop; then
     mount_ov="$(mount -t overlay)"
     if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/overlay.txt
-    grep -q Kakathic $MKD/overlay.txt || set_mdul description "$error_rw"
+    if grep -q Kakathic $MKD/overlay.txt; then
+    set_mdul description "Current status: RW 📝, file editable. After editing, restart to apply system changes."
+    else
+    set_mdul description "$error_rw"
+    fi
     else
     set_mdul description "$error_rw"
     rm -f $MKD/overlay.txt
