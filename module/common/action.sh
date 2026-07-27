@@ -29,8 +29,8 @@ if ! grep -q 'checkrw=' $MKD/module.prop; then
 fi
 
 # run code
+text_ro="Current status: RO 💤, currently unable to edit files, old files remain unchanged."
 if grep -q 'checkrw=1' $MKD/module.prop; then
-    text_ro="Current status: RO 💤, currently unable to edit files, old files remain unchanged."
     echo "$text_ro"
     set_mdul checkrw 0
     set_mdul description "$text_ro"
@@ -53,9 +53,9 @@ mount_ov="$(mount -t overlay)"
 
 if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/overlay.txt
-    grep -q Kakathic $MKD/overlay.txt || set_mdul description "Current status: RO 🛑"
+    grep -q Kakathic $MKD/overlay.txt || set_mdul description "$text_ro"
 else
-    set_mdul description "Current status: RO 🛑"
+    set_mdul description "$text_ro"
     rm -f $MKD/overlay.txt
 fi
 
