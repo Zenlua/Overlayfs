@@ -4,6 +4,11 @@
 
 + Report: [Telegram](https://t.me/tooltree)
 
+#### V1.7.0
+
++ Remove the possibility of depending on the meta module.
++ Now both modules are no longer dependent on existing mounts. 
+
 #### V1.6.9
 
 + Add check overlay
