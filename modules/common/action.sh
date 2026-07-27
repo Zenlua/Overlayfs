@@ -49,6 +49,7 @@ if grep -q 'checkrw=1' $MKD/module.prop; then
     [ -d "$vcl" ] && overlayfs ro "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
     done
 else
+    error_rw="Error: Unable to RW, please restart 🛑"
     text_rw="Current status: RW 📝, file editable. After editing, restart to apply system changes."
     echo "$text_rw"
     set_mdul checkrw 1
@@ -56,6 +57,15 @@ else
     for vcl in $(cat "$HOVELAY/partition.txt" | sort | uniq); do
     [ -d "$vcl" ] && overlayfs rw "$vcl" >> "$MKD/log.txt" 2>> "$MKD/log.txt"
     done
+    # Tạo log overlay
+    mount_ov="$(mount -t overlay)"
+    if [ "$mount_ov" ]; then
+    echo "$mount_ov" > $MKD/overlay.txt
+    grep -q Kakathic $MKD/overlay.txt || set_mdul description "$error_rw"
+    else
+    set_mdul description "$error_rw"
+    rm -f $MKD/overlay.txt
+    fi
 fi
 
 # Tạo log overlay
