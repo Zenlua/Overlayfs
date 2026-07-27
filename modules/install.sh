@@ -47,6 +47,7 @@ else
     fi
 fi
 ui_print " "
+rm -fr $MODPATH/system
 
 # Sao chép list
 mkdir -p "$HOVELAY"
