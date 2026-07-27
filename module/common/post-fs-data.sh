@@ -8,7 +8,7 @@ mkdir -p "$MKS"
 mount --bind "$MKD" "$MKS"
 
 # tính năng
-overlayfs_ro(){
+overlayfs(){
     if [ -d "$MKS$1" ]; then
     busybox setfattr -n trusted.overlay.opaque -v y $MKD$1 2>/dev/null
     chcon -R "$(busybox ls -nZld "$1" | awk '{print $5}')" "$MKD$1"
