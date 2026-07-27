@@ -28,8 +28,11 @@ if ! grep -q 'checkrw=' $MKD/module.prop; then
     exit
 fi
 
-# run code
+# string
 text_ro="Current status: RO 💤, currently unable to edit files, old files remain unchanged."
+text_rw="Current status: RW 📝, file editable. After editing, restart to apply system changes."
+
+# run code
 if grep -q 'checkrw=1' $MKD/module.prop; then
     echo "$text_ro"
     set_mdul checkrw 0
@@ -39,7 +42,7 @@ if grep -q 'checkrw=1' $MKD/module.prop; then
     done
     find $MKD -type d -empty -delete >/dev/null
 else
-    text_rw="Current status: RW 📝, file editable. After editing, restart to apply system changes."
+    
     echo "$text_rw"
     set_mdul checkrw 1
     set_mdul description "$text_rw"
@@ -58,8 +61,6 @@ else
     set_mdul description "$text_ro"
     rm -f $MKD/overlay.txt
 fi
-
-
 
 # End sleep delay 1s, fix bug ksu
 sleep 1
