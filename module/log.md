@@ -6,6 +6,7 @@
 
 #### V1.7.0
 
++ Fix bug V2
 + Remove the possibility of depending on the meta module.
 + Now both modules are no longer dependent on existing mounts. 
 
