@@ -31,6 +31,7 @@ fi
 # string
 text_ro="Current status: RO 💤, currently unable to edit files, old files remain unchanged."
 text_rw="Current status: RW 📝, file editable. After editing, restart to apply system changes."
+error_rw="Error: Unable to RW, please restart 🛑"
 
 # run code
 if grep -q 'checkrw=1' $MKD/module.prop; then
@@ -56,9 +57,9 @@ mount_ov="$(mount -t overlay)"
 
 if [ "$mount_ov" ]; then
     echo "$mount_ov" > $MKD/overlay.txt
-    grep -q Kakathic $MKD/overlay.txt || set_mdul description "$text_ro"
+    grep -q Kakathic $MKD/overlay.txt || set_mdul description "$error_rw"
 else
-    set_mdul description "$text_ro"
+    set_mdul description "$error_rw"
     rm -f $MKD/overlay.txt
 fi
 
