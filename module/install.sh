@@ -3,7 +3,7 @@
 # Để true để bỏ qua Mount system
 SKIPMOUNT=true
 # Để true nó sẽ kết hợp system.prop vào build.prop
-PROPFILE=false
+PROPFILE=true
 # Để true post-fs-data.sh được sử dụng
 POSTFSDATA=true
 # Để true để service.sh được sử dụng
