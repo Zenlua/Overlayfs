@@ -16,6 +16,7 @@ An Android module designed to mount **OverlayFS** with Read/Write (RW) permissio
 
 ### 1. Basic Version
 
+*   **Independence:** It operates completely independently and does not require installing Meta Module (with KSU).
 *   **Root Hiding:** There is no built-in root hiding feature.
 *   **Switching:** You can manually switch to (RO) to hide root.
 *   **Mount Mechanism:** Supports **Mount Overlay** only; Mount Bind is not available.
